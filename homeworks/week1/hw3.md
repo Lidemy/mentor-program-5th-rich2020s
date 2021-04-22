@@ -7,4 +7,5 @@
 在 terminal 輸入 mkdir wifi
 
 ### 建立 afu.js 的檔案
+在 terminal 輸入 cd wifi  
 在 terminal 輸入 touch afu.js
