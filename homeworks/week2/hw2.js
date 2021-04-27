@@ -1,9 +1,7 @@
 function capitalize(str) {
-  let newstr =''
-  for (let i = 0; i < str.length; i++){
-  	newstr += i === 0 ? str[i].toUpperCase() : str[i]
-  }
-  return newstr
+  let ans = str[0].toUpperCase() 
+  ans += str.slice(1)
+  return ans
 }
 
 console.log(capitalize('hello'));

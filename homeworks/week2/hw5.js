@@ -1,7 +1,7 @@
 function join(arr, concatStr) {
   let ans = ''
   for (let i = 0; i < arr.length; i++){
-  	ans += (i!== arr.length - 1 ? arr[i] + concatStr : arr[i])
+  	ans += i!== arr.length - 1 ? arr[i] + concatStr : arr[i]
   }
   return ans
 }

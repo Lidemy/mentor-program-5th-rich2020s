@@ -1,5 +1,6 @@
 function search(arr,n){
-  let min = 0,max = arr.length - 1
+  let min = 0
+  let max = arr.length - 1
   let mid = Math.floor((min + max) / 2)
   	
   while(mid <= max && mid >= min){
