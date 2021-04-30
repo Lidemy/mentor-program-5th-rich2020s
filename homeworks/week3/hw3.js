@@ -6,4 +6,4 @@ function isPrime(n) {
   }
   return 'Prime'
 }
-isPrime(5)
+console.log(isPrime(5))

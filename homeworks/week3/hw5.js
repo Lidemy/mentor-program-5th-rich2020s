@@ -1,7 +1,7 @@
-function lioj1004(input) {
+function lioj1004(input) {  // eslint-disable-line
   const n = Number(input[0])
   for (let i = 0; i < n; i++) {
-    let arr = input[i + 1].split(" ") // eslint-disable-line
+    let arr = input[0].split(" ") // eslint-disable-line
     for (let j = 0; j < 2; j++) {
       arr[j] = BigInt(arr[j])
     }
@@ -16,4 +16,3 @@ function lioj1004(input) {
     }
   }
 }
-lioj1004('123')
