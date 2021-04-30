@@ -8,5 +8,4 @@ function manystar(n) {
     console.log(tmp)
   }
 }
-
-module.exports = manystar
+manystar(5)
