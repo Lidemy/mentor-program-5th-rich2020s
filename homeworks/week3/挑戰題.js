@@ -19,10 +19,9 @@ rl.on('close', function() {
 function solve(lines) { // eslint-disable-line
   const squre = lines[0].split(' ')
   const mist = []
-  const h = squre[0]
-  const w = squre[1]
-  for (let i = 0; i < h; i++) {
-    const line = lines[i + 1].split('')
+  const [h, w] = squre
+  for (let i = 1; i < h; i++) {
+    const line = lines[i].split('')
     mist.push(line)
   }
   const q = [[0, 0]]
