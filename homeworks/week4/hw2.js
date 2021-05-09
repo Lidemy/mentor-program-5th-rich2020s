@@ -20,7 +20,7 @@ if (process.argv[2] === 'create') {
       form: { name: process.argv[3] }
     },
     (err, response, body) => {
-      console.log(err, body)
+      console.log(body)
     })
 }
 
@@ -47,7 +47,7 @@ if (process.argv[2] === 'update') {
       form: { name: process.argv[4] }
     },
     (err, response, body) => {
-      console.log('statusCode:', response && response.statusCode)
+      console.log(body)
     }
   )
 }
