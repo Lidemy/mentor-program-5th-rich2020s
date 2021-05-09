@@ -9,8 +9,8 @@ const option = {
 }
 function callback(err, response, body) {
   const json = JSON.parse(body)
-  for (let i = 0; i < 10; i++) {
-    console.log(json.top[i].viewers, json.top[i].game.name)
+  for (const i of json.top) {
+    console.log(i.viewers, i.game.name)
   }
 }
 request(option, callback)
