@@ -1,52 +1,94 @@
 const request = require('request')
 const process = require('process')
 
-if (process.argv[2] === 'list') {
-  request(
-    'https://lidemy-book-store.herokuapp.com/books',
+const action = process.argv[2]
+switch (action) {
+  case 'list':
+    printList()
+    break
+  case 'create':
+    createBook()
+    break
+  case 'read':
+    readBook()
+    break
+  case 'delete':
+    deleteBook()
+    break
+  case 'update':
+    updateBook()
+    break
+}
+
+function printList() {
+  request('https://lidemy-book-store.herokuapp.com/books?_limit=20',
     (err, response, body) => {
-      const json = JSON.parse(body)
-      for (let i = 0; i < 20; i++) {
+      if (err) {
+        console.log('err', err)
+        return
+      }
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (e) {
+        console.log(e.message)
+        return
+      }
+      for (let i = 0; i < json.length; i++) {
         console.log(`${json[i].id} ${json[i].name}`)
       }
     }
   )
 }
-
-if (process.argv[2] === 'create') {
+function createBook() {
   request.post(
     {
       url: 'https://lidemy-book-store.herokuapp.com/books',
       form: { name: process.argv[3] }
     },
     (err, response, body) => {
+      if (err) {
+        console.log(err)
+        return
+      }
       console.log(body)
     })
 }
-
-if (process.argv[2] === 'read') {
+function readBook() {
   request(
       `https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       (err, response, body) => {
+        if (err) {
+          console.log(err)
+          return
+        }
         console.log(body)
       }
   )
 }
-if (process.argv[2] === 'delete') {
+function deleteBook() {
   request.delete(
     `https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
     (err, response, body) => {
+      if (err) {
+        console.log(err)
+        return
+      }
       console.log('statusCode:', response && response.statusCode)
     }
   )
 }
-if (process.argv[2] === 'update') {
+function updateBook() {
   request.patch(
     {
       url: `https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       form: { name: process.argv[4] }
     },
     (err, response, body) => {
+      if (err) {
+        console.log(err)
+        return
+      }
       console.log(body)
     }
   )

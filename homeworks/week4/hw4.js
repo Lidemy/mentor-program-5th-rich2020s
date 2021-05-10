@@ -8,7 +8,21 @@ const option = {
   }
 }
 function callback(err, response, body) {
-  const json = JSON.parse(body)
+  if (err) {
+    console.log('err:', err)
+    return
+  }
+  let json
+  try {
+    json = JSON.parse(body)
+  } catch (e) {
+    console.log(e.message)
+    return
+  }
+  if (json.error) {
+    console.log('err:', json.error)
+    return
+  }
   for (const i of json.top) {
     console.log(i.viewers, i.game.name)
   }

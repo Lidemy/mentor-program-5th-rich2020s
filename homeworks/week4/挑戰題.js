@@ -19,14 +19,24 @@ const option2 = {
 
 rp(option)
   .then((repos) => {
-    const json = JSON.parse(repos)
+    let json
+    try {
+      json = JSON.parse(repos)
+    } catch (e) {
+      console.log('err', e)
+    }
     for (const i of json.streams) {
       console.log(i._id, i.channel.display_name, i.viewers)
     }
     return rp(option2)
   })
   .then((repos) => {
-    const json = JSON.parse(repos)
+    let json
+    try {
+      json = JSON.parse(repos)
+    } catch (e) {
+      console.log('err', e)
+    }
     for (const i of json.streams) {
       console.log(i._id, i.channel.display_name, i.viewers)
     }
