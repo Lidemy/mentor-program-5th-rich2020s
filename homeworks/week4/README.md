@@ -8,7 +8,7 @@
 
 Base URL: https://lidemy-book-store.herokuapp.com
 
-| 說明     | Method | path       | 參數                   | 範例             |
+s 說明     | Method | path       | 參數                   | 範例             |
 |--------|--------|------------|----------------------|----------------|
 | 獲取所有書籍 | GET    | /books     | _limit:限制回傳資料數量           | /books?_limit=5 |
 | 獲取單一書籍 | GET    | /books/:id | 無                    | /books/10      |
