@@ -1,0 +1,119 @@
+h1 {
+  text-align: center;
+}
+.form__title {
+  font-family: MicrosoftJhengHei;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 54px;
+}
+.form__content{
+  margin-left: 42px;
+}
+.form__page {
+  border-top:solid 6px #fad312;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+  width: 645px;
+  height: 1085px;
+  margin: 126px auto;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+}
+body {
+  background: rgba(0,0,0,0.05);
+}
+.info {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  margin-bottom: 11px;
+}
+div.necessary{
+  color: red;
+  margin-top: 22px; 
+}
+h2.necessary::after {
+  content: "*";
+  color:red; 
+  font-size: 20px;
+  font-weight: lighter;
+  margin-left: 7px; 
+}
+h2 {
+  font-family: MicrosoftJhengHei;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+form input{
+  width: 287px;
+}
+input[type="radio"]{
+  width: auto;
+}
+label{
+  font-size: 14px;
+  margin-top: 12px;
+  display:inline-block;
+}
+input[type="submit"]{
+  background: #fad312;
+}
+.others{
+  margin-bottom: 12px;
+}
+.advice{
+  margin-bottom: 24px;
+}
+.submit{
+  width: 92px;
+  height: 40px;
+  margin-top: 55px;
+  margin-bottom: 21px;
+  border:1px solid white;
+  border-radius: 3px;
+}
+.alert{
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+}
+.footer{
+  width: 100%;
+  height: 60px;
+  background: black;
+  font-size: 13px;
+  color: #999999;
+  border-top: 3px solid #fad312;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media(max-width: 768px) {
+  h1 {
+    width: 80%;
+    margin-top: 0;
+  }
+  .form__page{
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .form__content{
+    width: 80%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .submit{
+    width: 50%;
+    margin: 30px auto 21px auto;
+    justify-content: center;
+    display: flex;
+  }
+  .footer{
+    height: 40px;
+    border-top: 2px solid #fad312;
+  }
+}
