@@ -126,11 +126,11 @@ h2 {
 .button:hover {
   transform: scale(1.1);
 }
-.btn_order{
+.btn__order{
   background: #a8e8e1;
   margin-right: 23px;
 }
-.btn_search{
+.btn__search{
   background: #f9f9b5;
 }
 .menus{
@@ -165,12 +165,12 @@ h2 {
   margin-top: 90px;
   margin-bottom: 36px;  
 }
-.footer-bottom {
+.footer__bottom {
   background: #35564b;
   text-align: center;
   justify-content: : center;
 }
-.footer-bottom p {
+.footer__bottom p {
   font-family: MicrosoftJhengHei;
   font-size: 16px;
   color: white;
@@ -182,7 +182,7 @@ h2 {
   background: #e8efee;
   width: 100%;
 }
-.footer-top{
+.footer__top{
   display: flex;
   max-width: 1280px;
   justify-content: space-between;
@@ -198,7 +198,7 @@ h2 {
   font-size: 36px;
   color: #489846;
 }
-.footer-top-right{
+.footer__top__right{
   text-align: right;
 }
 .footer__links a{
@@ -287,7 +287,7 @@ h2 {
   .pics img{
   width: 100%;
   }
-  .footer-bottom p{
+  .footer__bottom p{
     display: inline;
     overflow-wrap: break-word;
   }
