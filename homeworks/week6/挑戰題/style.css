@@ -1,0 +1,126 @@
+.content{
+  width: 85%;
+  max-width: 1280px;
+  margin: 10px auto;
+  background-color: rgb(246, 246, 239);
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff6600;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.navbar__container{
+  display: flex;
+  align-items: center;
+}
+.navbar__mark {
+  display: block;
+  box-sizing: border-box;
+  border:1px solid white;
+  color: white;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  margin-left: 2px;
+}
+.navbar__title{
+  font-size: 10pt;
+  font-weight: bold;
+  margin-left: 3px;
+}
+.navbar__links{
+  margin-left: 5px;
+}
+.navbar__links a{
+  font-size: 10pt;
+  text-decoration: none;
+  color: black;
+  margin: 0 6px;
+  cursor: pointer;
+}
+.navbar__login{
+  font-size: 10pt;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.news__post{
+  display: flex;
+  align-items: center;
+}
+.news__arrow{
+    height: 0px;
+    width: 0px;
+    border: 5px solid transparent;
+    border-bottom: 10px solid #828282;
+    display: inline-block;
+    position: relative;
+    left: 5px;
+}
+.news__title{
+  margin: 3px 0;
+  margin-left: 12px;
+  font-size: 10pt;
+}
+.news__info{
+  color: #828282;
+  font-size: 7pt;
+}
+.news__info a, .news__source a, .news__source{
+  text-decoration: none;
+  color: #828282;
+}
+.news__source a, .news__source{
+  font-size: 8pt;
+}
+.news__info a:hover{
+  text-decoration: underline;
+}
+.news__rank{
+  color: #828282;
+}
+.ranks__container{
+  width: 22px;
+  height: 19px;
+  display: flex;
+  justify-content: flex-end;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(246, 246, 239);
+  border-top: 1px solid #ff6600;
+}
+.footer__links a{
+  color: black;
+  font-size: 8pt;
+  font-family: Verdana, Geneva, sans-serif;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.footer__links{
+  margin: 12px 0;
+}
+.more{
+  margin-left: 43px;
+  padding: 8px 0; 
+}
+.more a{
+  color: black;
+  text-decoration: none;
+  font-size: 10pt;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.search{
+  color: #828282;
+}
+.search input{
+  font-family: monospace;
+  font-size: 10pt;
+  width: 140px;
+  margin-bottom: 10px;
+}
