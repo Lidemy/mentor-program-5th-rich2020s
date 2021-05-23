@@ -29,21 +29,28 @@
   font-size: 10pt;
   font-weight: bold;
   margin-left: 3px;
+  text-align: center;
 }
 .navbar__links{
   margin-left: 5px;
 }
+
 .navbar__links a{
   font-size: 10pt;
   text-decoration: none;
   color: black;
-  margin: 0 6px;
   cursor: pointer;
 }
+.navbar__links a:not(:last-child)::after{
+    content: " | ";
+    color: black;
+    font-size: 10pt;
+    font-family: Verdana, Geneva, sans-serif;
+  }
 .navbar__login{
   font-size: 10pt;
   cursor: pointer;
-  margin-right: 8px;
+  margin: 0 8px;
 }
 .news__post{
   display: flex;
@@ -62,6 +69,16 @@
   margin: 3px 0;
   margin-left: 12px;
   font-size: 10pt;
+}
+.news__title a{
+  text-decoration: none;
+  color: black;
+}
+.news__title a:hover{
+  text-decoration: underline;
+}
+.news__title a:visited{
+  color: #828282;
 }
 .news__info{
   color: #828282;
@@ -100,10 +117,17 @@
   font-size: 8pt;
   font-family: Verdana, Geneva, sans-serif;
   text-decoration: none;
-  margin: 0 5px;
+  margin: 0;
 }
+.footer__links a:not(:last-child)::after{
+    content: " | ";
+    color: black;
+    font-size: 8pt;
+    font-family: Verdana, Geneva, sans-serif;
+  }
 .footer__links{
   margin: 12px 0;
+  text-align: center;
 }
 .more{
   margin-left: 43px;
@@ -123,4 +147,27 @@
   font-size: 10pt;
   width: 140px;
   margin-bottom: 10px;
+}
+@media(max-width: 768px){
+  .content{
+    width: 100%;
+  }
+  .navbar__links a{
+    margin: 0;
+  }
+  .navbar__links{
+    word-break: break-word;
+    margin: 0;
+    margin-left: 5px;
+  }
+  .navbar__mark{
+    padding: 0 2px;
+  }
+  .navbar__container{
+    display: flex;
+  }
+  .content{
+    margin: 0;
+  }
+  
 }
