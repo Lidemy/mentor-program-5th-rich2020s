@@ -1,13 +1,14 @@
+
+const messages = document.querySelectorAll('.page__questions--div')
+for (const message of messages) {
+  createMessage(message)
+}
 const element = document.querySelector('.page__questions')
 element.addEventListener('click', (e) => {
   if (e.target.classList.contains('ques__answer')) return
   for (let i = 0; i < e.path.length - 2; i++) {
     if (e.path[i].getElementsByClassName('ques__answer')[0]) {
       e.path[i].getElementsByClassName('ques__answer')[0].classList.toggle('hide')
-      break
-    }
-    if (e.path[i].classList.contains('page__questions--div')) {
-      createMessage(e.path[i])
       break
     }
   }
