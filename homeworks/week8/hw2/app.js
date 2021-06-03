@@ -21,7 +21,13 @@ function topGamesTest() {
     const firstGame = document.querySelector('.content__title h2')
     request.addEventListener('load', () => {
       if (request.status >= 200 && request.status < 400) {
-        const json = JSON.parse(request.responseText)
+        let json
+        try {
+          json = JSON.parse(request.responseText)
+        } catch (err) {
+          console.log('err', err)
+          return
+        }
         for (let i = 0; i < 5; i++) {
           if (i === 0) firstGame.innerText = json.top[i].game.name
           gameName[i].innerText = json.top[i].game.name
@@ -54,6 +60,7 @@ function getLiveStreams(game) {
           json = JSON.parse(request.responseText)
         } catch (err) {
           console.log('err:', err)
+          return
         }
         if (json.streams.length < 20) document.querySelector('.loadingBtn').remove()
         resolve(json)
