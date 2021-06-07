@@ -148,8 +148,9 @@
    transition: all 0.5s;
    overflow: hidden;
    padding-left: 40px; 
+   white-space: pre-line;
 }
-.hide{
+.show{
   overflow: hidden;
   margin: 10px 0;
   max-height: 500px;

@@ -32,8 +32,8 @@ p {
   background: transparent;
   border:1px solid #ccc;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   position: relative;
 }
 .btn:after,.btn:before{
@@ -53,8 +53,8 @@ p {
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 .selectbox{
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   border: 1px solid #ccc;
   background: transparent;
   border-radius: 3px; 

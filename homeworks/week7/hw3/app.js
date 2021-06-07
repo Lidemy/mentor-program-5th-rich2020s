@@ -8,29 +8,23 @@ todo.addEventListener('keypress', (e) => {
 
 function createNote(text) {
   const container = document.createElement('div')
-  const node = document.createElement('p')
-  const checkbox = document.createElement('button')
-  const label = document.createElement('label')
-  const btn = document.createElement('button')
-
-  node.innerText = text
+  container.innerHTML = `
+    <button id="checkbox" style="display:none"></button>
+    <label for="checkbox" class="selectbox"></label>
+    <p>${text}</p>
+    <button class="btn"></button>
+    `
   container.classList.add('list')
-  checkbox.setAttribute('id', 'checkbox')
-  checkbox.style.display = 'none'
-  label.classList.add('selectbox')
-  label.setAttribute('for', 'checkbox')
-  btn.classList.add('btn')
-  container.appendChild(checkbox)
-  container.appendChild(label)
-  container.appendChild(node)
-  container.appendChild(btn)
   document.querySelector('main').appendChild(container)
-
-  container.addEventListener('click', (e) => {
-    if (e.target === label) {
-      container.classList.toggle('complete')
-      label.classList.toggle('selectbox__on')
-    }
-    if (e.target === btn) btn.parentNode.remove()
-  })
 }
+
+const main = document.querySelector('main')
+main.addEventListener('click', (e) => {
+  const label = e.target.parentNode.querySelector('.selectbox')
+  const btn = e.target.parentNode.querySelector('.btn')
+  if (e.target === label) {
+    e.target.parentNode.classList.toggle('complete')
+    label.classList.toggle('selectbox__on')
+  }
+  if (e.target === btn) btn.parentNode.remove()
+})
