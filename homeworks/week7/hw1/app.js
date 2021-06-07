@@ -12,8 +12,8 @@ element.addEventListener('submit', (e) => {
   e.preventDefault()
   necessary = true
   const type = element.querySelectorAll('input[name=報名類型]')
-  warn(inputs)
-  warntype(type)
+  checkText(inputs)
+  checkOption(type)
   if (necessary === true) alert(printData())
 })
 
@@ -30,9 +30,12 @@ function printData() {
   return JSON.stringify(values)
 }
 
-function warntype(inputs) {
+function checkOption(inputs) {
   const type = document.querySelector('.type')
-  type.appendChild(createWarn())
+  const div = document.createElement('div')
+  div.classList.add('warn')
+  div.innerHTML = '此處不可為空'
+  type.appendChild(div)
   for (const input of inputs) {
     if (input.checked) {
       if (type.querySelector('.warn').classList.contains('display__warn')) {
@@ -42,10 +45,11 @@ function warntype(inputs) {
     }
   }
   type.querySelector('.warn').classList.add('display__warn')
+  necessary = false
   // type.classList.add('display__warn')
 }
 
-function warn(inputs) {
+function checkText(inputs) {
   for (const input of inputs) {
     if (input.name === 'advice' || input.name === 'submit' ||
      input.type.toLowerCase() === 'radio') continue
@@ -59,13 +63,8 @@ function warn(inputs) {
 }
 
 function insertWarn(location) {
-  const div = createWarn()
-  location.parentNode.insertBefore(div, location.nextSibling)
-}
-
-function createWarn() {
   const div = document.createElement('div')
   div.classList.add('warn')
   div.innerHTML = '此處不可為空'
-  return div
+  location.parentNode.insertBefore(div, location.nextSibling)
 }
