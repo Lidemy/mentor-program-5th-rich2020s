@@ -31,7 +31,7 @@
       <span class="username">
         <?php 
           if(!empty($_SESSION['username'])) {
-            echo $_SESSION['username'];
+            echo htmlspecialchars($_SESSION['username']);
           }
         ?>
       </span>
