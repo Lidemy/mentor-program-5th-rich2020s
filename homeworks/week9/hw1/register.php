@@ -1,7 +1,7 @@
 <form action="handle_register.php" method="POST">
   <h2>註冊新會員</h2>
   <div>username:<input name="username"></div>
-  <div>password:<input name="password"></div>
+  <div>password:<input type="password" name="password"></div>
   <div >
     <input class="submit" type="submit" value="註冊">  
   </div>
