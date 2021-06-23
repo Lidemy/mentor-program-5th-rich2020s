@@ -23,6 +23,7 @@
   <meta charset="utf-8">
   <title>Who's blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link rel="stylesheet" href="content-styles.css" type="text/css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -59,7 +60,7 @@
           <span class="post__info--username"><?php echo '作者：@' . escape($row['username']) ?></span>
           <span><?php echo escape($row['created_at']) ?></span>
         </div>
-        <div class="post__content"><?php echo $row['content'] ?></div>
+        <div class="post__content ck-content"><?php echo $row['content'] ?></div>
         <a href="post.php?id=<?php echo escape($row['id']) ?>"><button class="readmore__btn">READ MORE</button></a>
       </div>
     </div>
