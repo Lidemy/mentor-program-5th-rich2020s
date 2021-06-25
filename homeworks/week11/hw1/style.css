@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.warn{
+  background: red;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+}
+body{
+  width: 100%;
+  background: #f7f7f7;
+}
+button ,.submit{
+  background: white;
+  padding: 10px 20px;
+  border:1px solid gray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.user{
+  margin-top: 20px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  text-decoration: underline;
+}
+.main{
+  margin: 10px auto;
+  padding: 20px;
+  background: white;
+  width: 100%;
+  max-width: 700px;
+}
+.title{
+  margin: 30px 0;
+}
+.comment{
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+}
+.submit {
+  display: block;
+  margin: 10px auto;
+}
+.submit:hover, button:hover{
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.card__info{
+  margin-left: 20px;
+  display: inline-block;
+}
+.info__container{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.card__content{
+  margin-left: 20px;
+}
+.card__profile{
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  min-height: 50px;
+  min-width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #a1c1ff;
+}
+.card__container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.card__info-username,.card__info-time {
+  display: inline-block;
+}
+.card ~ .card {
+  margin-top: 30px;
+}
+.card__info-username{
+  color:#2E8BC0;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 10%;
+}
+.registerBtn{
+  color: black;
+}
+.registerBtn:hover {
+ text-decoration:underline; 
+}
+.login__input{
+  margin:10px;
+}
+.update{
+  display: inline-block;
+}
+.buttom__hr{
+  border: 1px solid #666666;
+  margin: 20px 0;
+}
+.page__info{
+  display: flex;
+  justify-content: space-between;
+}
+.page__info--container{
+  display: inline-block;
+}
+.manage__table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.manage__table td, .manage__table th{
+  border: 1px solid black;
+  padding: 0 3px;
+}
+.hide{
+  display: none;
+}
