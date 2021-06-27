@@ -12,8 +12,8 @@
     $authority = $user['Authority'];
   }
   $page = 1;
-  if (!empty($_GET['page']) $$ is_numeric($page)) {
-    $page = escape($_GET['page']);
+  if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = $_GET['page'];
   }
   $item_per_page = 10;
   $offset = ($page - 1) * $item_per_page;
@@ -112,16 +112,16 @@
   $total_page = ceil($count / $item_per_page);
   ?>
   <div class="page__info">
-    <span>總共有 <?php echo $count ?> 筆留言</span>
-    <span>第 <?php echo $page . '/' .$total_page ?> 頁</span>
+    <span>總共有 <?php echo escape($count) ?> 筆留言</span>
+    <span>第 <?php echo escape($page) . '/' .$total_page ?> 頁</span>
     <div class="page__info--container">
       <?php if ($page != 1) { ?>
         <span><a href="index.php?page=1">首頁</a></span>
-        <span><a href="index.php?page=<?php echo $page - 1; ?>">上一頁</a></span>  
+        <span><a href="index.php?page=<?php echo escape($page - 1); ?>">上一頁</a></span>  
       <?php } ?>
       <?php if ($page != $total_page) { ?>
-        <span><a href="index.php?page=<?php echo $page + 1; ?>">下一頁</a></span>
-        <span><a href="index.php?page=<?php echo $page + 1; ?>">最後一頁</a></span>
+        <span><a href="index.php?page=<?php echo escape($page + 1); ?>">下一頁</a></span>
+        <span><a href="index.php?page=<?php echo escape($page + 1); ?>">最後一頁</a></span>
       <?php } ?>
     </div>
   </div>
