@@ -12,8 +12,8 @@
     $authority = $user['Authority'];
   }
   $page = 1;
-  if (!empty($_GET['page'])) {
-    $page = $_GET['page'];
+  if (!empty($_GET['page']) $$ is_numeric($page)) {
+    $page = escape($_GET['page']);
   }
   $item_per_page = 10;
   $offset = ($page - 1) * $item_per_page;
