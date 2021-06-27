@@ -1,0 +1,17 @@
+.title{
+  margin-top:30px;
+}
+.hiden{
+  display: none;
+}
+.card{
+  margin-top: 20px;
+}
+.container{
+  margin-bottom: 30px;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
