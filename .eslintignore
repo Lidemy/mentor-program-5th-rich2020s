@@ -1,2 +1,4 @@
 examples/
 week2/
+*.min.js
+*.config.js
