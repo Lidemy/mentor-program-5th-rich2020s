@@ -17,13 +17,13 @@
   $site = $_GET['site'];
   if (!empty($_GET['offset']) && is_numeric($_GET['offset'])) {
     $offset = $_GET['offset'];
-    $sql = "SELECT *,(SELECT count(id) FROM rich_board WHERE id < ?) as count FROM rich_board WHERE site = ? and id < ? ORDER BY id DESC limit 5";
+    $sql = "SELECT *,(SELECT count(id) FROM rich_board WHERE site = ? and id < ?) as count FROM `rich_board` WHERE site = ? and id < ? ORDER by id DESC limit 5";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isi", $offset, $site, $offset);
+    $stmt->bind_param("sisi", $site, $offset, $site, $offset);
   }else {
-    $sql = "SELECT *,(SELECT count(id) FROM rich_board) as count FROM `rich_board` WHERE site = ? ORDER by id DESC limit 5";
+    $sql = "SELECT *,(SELECT count(id) FROM rich_board WHERE site = ?) as count FROM `rich_board` WHERE site = ? ORDER by id DESC limit 5";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $site);
+    $stmt->bind_param("ss", $site, $site);
   }
     $result = $stmt->execute();
     $result = $stmt->get_result();
@@ -35,7 +35,7 @@
       $response = json_encode($json);
       echo $response;
       die();
-      }
+    }
   $discussion = array();
   while($row = $result->fetch_assoc()) {
     array_push($discussion, array(
@@ -47,13 +47,14 @@
     $count = $row['count'];
   };
   $loadingmore = true;
-    if ($count <= 5) {
+    if ($count - 5 <= 0) {
       $loadingmore = false;
     }
   $json = array(
     "ok" => true,
     "discussion" => $discussion,
-    "loadingmore" => $loadingmore
+    "loadingmore" => $loadingmore,
+    "count" => $count
   );
   $response = json_encode($json);
   echo $response;
