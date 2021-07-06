@@ -8,20 +8,8 @@ import { formTemplate, addComment, escapeHtml } from './template'
 /* eslint-disable */
 export function init(options) {
   let offset
-  // let siteKey = ''
-  // let apiUrl = ''
   let isLoading = false
-  // const containerSelector = ''
-  // const addCommentUrl = ''
-  // let loadingBtnSelector
-  // let formNameSelector
-  // let nicknameSelector
-  // let contentSelector
-  // let messageSelector = ''
   const { siteKey, apiUrl, addCommentUrl } = options
-  // const siteKey = options.siteKey
-  // const apiUrl = options.apiUrl
-  // const addCommentUrl = options.addCommentUrl
   $(options.containerSelector).append(formTemplate(siteKey))
   const loadingBtnSelector = `#${siteKey}-loadingBtn`
   const formNameSelector = `.${siteKey}-form`
