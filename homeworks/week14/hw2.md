@@ -84,5 +84,5 @@ http://your_domain_or_IP/phpmyadmin
 * 設錯 MySQL root 的密碼，導致我連 MySQL 都進不去。有試著用 google 的解決方式，之後也重灌，但都無效。後來因為防火牆問題重開主機解決。
 * 結論，有問題先換主機就對了（Ｘ）
 
-
+[http://blog.richbox.tw/](http://blog.richbox.tw/)
 
