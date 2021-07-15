@@ -82,6 +82,7 @@ http://your_domain_or_IP/phpmyadmin
 * 不知道為什麼 scp, sftp 我檔案都傳不過。好像是權限不足，但我也不知道要怎麼增加我的權限。用了很多方法都無效。最後用 git clone 解決。
 * 不知設了什麼防火牆的設定，結果之後就沒辦法用 ssh 的方式連上主機。不知道怎麼解決，所以直接重開主機xD。
 * 設錯 MySQL root 的密碼，導致我連 MySQL 都進不去。有試著用 google 的解決方式，之後也重灌，但都無效。後來因為防火牆問題重開主機解決。
+* 設定 subdomain 一直設定不好，結果發現是沒在 DNS 上設定。原來也要在 DNS 上設定。我還以為 DNS 解析完 domain 就直接丟 ip， subdomain 交給我們的主機處理。
 * 結論，有問題先換主機就對了（Ｘ）
 
 [http://blog.richbox.tw/](http://blog.richbox.tw/)
