@@ -15,7 +15,7 @@
     exit();
   }
   $id = $_GET['id'];
-  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? and is_deleted IS NULL");
+  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? AND is_deleted = 0");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("i", $id);
   $result = $stmt->execute();

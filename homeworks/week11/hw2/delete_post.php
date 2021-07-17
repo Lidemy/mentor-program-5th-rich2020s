@@ -16,7 +16,7 @@
     die("資料有缺，請再試一次");
   }
   $id = $_GET['id'];
-  $sql = sprintf("UPDATE rich_blog_artcle set is_deleted = 1 WHERE id =? and username = ?");
+  $sql = sprintf("UPDATE rich_blog_artcle SET is_deleted = 1 WHERE id =? AND username = ?");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('is', $id, $username);
   $result = $stmt->execute();
