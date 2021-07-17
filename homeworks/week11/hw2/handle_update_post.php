@@ -17,7 +17,7 @@
     die('資料有缺，請再試一次');
   }
 
-  $sql = sprintf("UPDATE rich_blog_artcle set title = ?, content=? WHERE id =? and username =?");
+  $sql = sprintf("UPDATE rich_blog_artcle SET title = ?, content=? WHERE id =? AND username =?");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ssss", $_POST['title'], $_POST['content'], $_POST['id'], $username);
   $result = $stmt->execute();

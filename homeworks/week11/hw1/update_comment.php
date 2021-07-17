@@ -20,7 +20,7 @@
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
   } else {
-  $sql = sprintf("SELECT * FROM rich_comments WHERE id = ? and username =?");
+  $sql = sprintf("SELECT * FROM rich_comments WHERE id = ? AND username =?");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('is', $id, $username);
   }

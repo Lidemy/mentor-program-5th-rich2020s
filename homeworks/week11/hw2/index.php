@@ -9,7 +9,7 @@
     $username = $_SESSION['username'];
     $user = getUserFromUsername($username);
   }
-  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE is_deleted IS NULL order by created_At DESC limit 5");
+  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE is_deleted = 0 ORDER BY created_At DESC LIMIT 5");
   $stmt = $conn->prepare($sql);
   $result = $stmt->execute();
   if (!$result) {

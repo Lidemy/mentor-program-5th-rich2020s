@@ -17,8 +17,6 @@
   if ($user['Authority'] !== 2){
     die('權限不足');
   }
-
-  echo $_POST['Authority'] . ' ' . $_POST['Authority'];
   $sql = sprintf("UPDATE rich_member set Authority = ? WHERE id =?");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ii", $_POST['Authority'], $_POST['id']);

@@ -12,18 +12,18 @@
     $authority = $user['Authority'];
   }
   $page = 1;
-  if (!empty($_GET['page'])) {
+  if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $page = $_GET['page'];
   }
   $item_per_page = 10;
   $offset = ($page - 1) * $item_per_page;
   $stmt = $conn->prepare(
-    'SELECT C.id as id, C.content as content, ' .
-    'C.created_at as created_at, M.nickname as nickname, ' . 
-    'M.username as username FROM rich_comments as C ' . 
-    'LEFT JOIN rich_member as M on C.username = M.username ' . 
-    'WHERE C.is_deleted IS NULL order by created_at DESC ' .
-    'limit ? offset ?'
+    'SELECT C.id AS id, C.content AS content, ' .
+    'C.created_at AS created_at, M.nickname AS nickname, ' . 
+    'M.username AS username FROM rich_comments AS C ' . 
+    'LEFT JOIN rich_member AS M ON C.username = M.username ' . 
+    'WHERE C.is_deleted = 0 ORDER BY created_at DESC ' .
+    'LIMIT ? OFFSET ?'
   );
   $stmt->bind_param('ii', $item_per_page, $offset);
   $result = $stmt->execute();
@@ -112,16 +112,16 @@
   $total_page = ceil($count / $item_per_page);
   ?>
   <div class="page__info">
-    <span>總共有 <?php echo $count ?> 筆留言</span>
-    <span>第 <?php echo $page . '/' .$total_page ?> 頁</span>
+    <span>總共有 <?php echo escape($count) ?> 筆留言</span>
+    <span>第 <?php echo escape($page) . '/' .$total_page ?> 頁</span>
     <div class="page__info--container">
       <?php if ($page != 1) { ?>
         <span><a href="index.php?page=1">首頁</a></span>
-        <span><a href="index.php?page=<?php echo $page - 1; ?>">上一頁</a></span>  
+        <span><a href="index.php?page=<?php echo escape($page - 1); ?>">上一頁</a></span>  
       <?php } ?>
       <?php if ($page != $total_page) { ?>
-        <span><a href="index.php?page=<?php echo $page + 1; ?>">下一頁</a></span>
-        <span><a href="index.php?page=<?php echo $page + 1; ?>">最後一頁</a></span>
+        <span><a href="index.php?page=<?php echo escape($page + 1); ?>">下一頁</a></span>
+        <span><a href="index.php?page=<?php echo escape($page + 1); ?>">最後一頁</a></span>
       <?php } ?>
     </div>
   </div>

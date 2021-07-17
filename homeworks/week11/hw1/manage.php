@@ -21,8 +21,8 @@
   $item_per_page = 10;
   $offset = ($page - 1) * $item_per_page;
   $stmt = $conn->prepare(
-    'SELECT * FROM rich_member as C ' .
-    'WHERE C.id != ? limit ? offset ?'
+    'SELECT * FROM rich_member AS C ' .
+    'WHERE C.id != ? LIMIT ? OFFSET ?'
   );
   $stmt->bind_param('iii', $user['id'], $item_per_page, $offset);
   $result = $stmt->execute();
@@ -96,7 +96,7 @@
   <div class="buttom__hr"></div>
   <?php 
   $stmt = $conn->prepare(
-    'SELECT count(id) as count FROM rich_member'
+    'SELECT count(id) AS count FROM rich_member'
   );
   $result = $stmt->execute();
   $result = $stmt->get_result();
