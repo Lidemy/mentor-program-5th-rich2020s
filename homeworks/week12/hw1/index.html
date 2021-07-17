@@ -30,6 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript">
       let offset
+      let waitRequest = false;
       $("documnet").ready((e) => {
         $.ajax({
           url:"http://mentor-program.co/mtr04group3/rich0127/week12/hw1/api_comment.php?site=rich",
@@ -47,6 +48,8 @@
       })
       $(".form").submit(e => {
         e.preventDefault();
+        if (waitRequest) return;
+        waitRequest = true;
         $.ajax({
           url:"http://mentor-program.co/mtr04group3/rich0127/week12/hw1/api_add_comment.php",
           type:"POST",
@@ -58,9 +61,11 @@
         })
         .done (data => {
           location.reload();
+          waitRequest = false
         })
         .fail(err => {
           console.log(err);
+          waitRequest = false
         })
       });
       function addComment(datas) {
@@ -76,6 +81,8 @@
         }
       }
       $('#loading').on('click', (e) => {
+        if (waitRequest) return
+        waitRequest = true
         $.ajax ({
           url:`http://mentor-program.co/mtr04group3/rich0127/week12/hw1/api_comment.php?site=rich&offset=${offset}`,
           type:"GET"
@@ -83,12 +90,12 @@
         .done (data => {
           addComment(data);
           offset = data.discussion[data.discussion.length - 1].id
-          if (!data.loadingmore) {
-            $('#loading').hide();
-          }
+          if (!data.loadingmore) $('#loading').hide()
+          waitRequest = false
         })
         .fail(error => {
           console.log(error)
+          waitRequest = false
         })
       })
       function escapeHtml(unsafe) {
