@@ -57,15 +57,16 @@ a {
 }
 
 .posts {
-  max-width: 920px;
+  width: 920px;
   margin: 20px auto;
   background: white;
 }
 
 .post {
-  max-width: 920px;
+  width: 920px;
   border: solid 1px #9a9a9a;
   box-sizing: border-box;
+  /*display: inline-block;*/
 }
 .post ~ .post {
   margin-top: 40px;
@@ -78,6 +79,7 @@ a {
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 20px;
+  display:-webkit-box; 
 }
 .post__title, .post__title ~ a {
   display: inline-block;
@@ -100,9 +102,8 @@ a {
   margin-right: 10px;
 }
 .post__content {
-  margin: 30px 0;
+  margin: 30px;
 }
-
 .readmore__btn {
   margin: 20px 0;
   background: white;
@@ -200,7 +201,7 @@ a {
 }
 
 .ck-content {
-  height: 300px;
+  min-height: 300px;
 }
 
 .newpost__container {
