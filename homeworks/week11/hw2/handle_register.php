@@ -7,7 +7,7 @@
   }
   $username = $_POST['username'];
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-  $sql = sprintf("INSERT INTO rich_blog_user(username, password) values(?, ?)");
+  $sql = sprintf("INSERT INTO rich_blog_user(username, password) VALUES(?, ?)");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ss", $username, $password);
    $result = $stmt->execute();
