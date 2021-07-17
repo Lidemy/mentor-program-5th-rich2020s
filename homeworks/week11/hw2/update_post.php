@@ -16,7 +16,7 @@
     die("缺乏資料，請重新嘗試");
   }
   $id = $_GET['id'];
-  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? and username =? and is_deleted IS NULL");
+  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? AND username =? AND is_deleted = 0");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("is", $id, $username);
   $result = $stmt->execute();

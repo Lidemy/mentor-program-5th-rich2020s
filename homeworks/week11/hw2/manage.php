@@ -12,7 +12,7 @@
     header('Location:login.php');
     exit();
   }
-  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE username = ? and is_deleted IS NULL order by created_At DESC");
+  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE username = ? AND is_deleted = 0 ORDER BY created_At DESC");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $username);
   $result = $stmt->execute();

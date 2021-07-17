@@ -9,7 +9,7 @@
     $username = $_SESSION['username'];
     $user = getUserFromUsername($username);
   }
-  $sql = sprintf("SELECT A.title as title, A.created_at as created_at, A.id as id FROM rich_blog_artcle as A WHERE is_deleted IS NULL order by created_At DESC");
+  $sql = sprintf("SELECT A.title AS title, A.created_at AS created_at, A.id AS id FROM rich_blog_artcle AS A WHERE is_deleted = 0 ORDER BY created_At DESC");
   $stmt = $conn->prepare($sql);
   $result = $stmt->execute();
   if (!$result) {
