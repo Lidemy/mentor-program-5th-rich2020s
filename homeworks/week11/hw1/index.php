@@ -103,7 +103,7 @@
   <div class="buttom__hr"></div>
   <?php 
   $stmt = $conn->prepare(
-    'SELECT count(id) as count FROM rich_comments WHERE is_deleted IS NULL'
+    'SELECT count(id) as count FROM rich_comments WHERE is_deleted = 0'
   );
   $result = $stmt->execute();
   $result = $stmt->get_result();
