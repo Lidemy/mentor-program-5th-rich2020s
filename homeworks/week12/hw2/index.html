@@ -51,7 +51,7 @@
        .done(e => {
         let data = JSON.parse(e.data)
         for (let d of data) {
-          loadTodo(d);
+          loadTodo(d.text,d.check);
         }
         })
        .fail(e => {
@@ -64,19 +64,21 @@
       if (target.is("input[type='checkbox']")) {
         target.parent().find('.list-group-text').toggleClass('line-through')
       }
+      reloadTodo()
     })
     //新增留言 從 enter 和 add
     $('.add-input').keypress(e => {
       const input = $('.add-input').val()
       if (e.key === "Enter" && input !== "") {
         e.preventDefault();
-        addTodo(input)
+        loadTodo(input,false)
         $('.add-input').val('')
+        reloadTodo()
       }
     })
     $('.add').click( e => { 
       const input = $('.add-input').val()
-      if (input !=="") addTodo(input)
+      if (input !=="") loadTodo(input,false)
       $('.add-input').val('')
     })
     //編輯和刪除功能
@@ -116,19 +118,7 @@
     })
     // 篩選功能
     $('.options').change( e => {
-      const all = $("#btnradio1")
-      const active = $("#btnradio2")
-      const completed = $("#btnradio3")
-
-      if ($(e.target).is(all)) {
-        $('.list-group input').parent().slideDown()
-      } else if ($(e.target).is(active)) {
-        $('.list-group input').parent().slideDown()
-        $('.list-group input:checked').parent().slideUp()
-      } else if ($(e.target).is(completed)) {
-        $('.list-group input').parent().slideDown()
-        $('.list-group input:not(:checked)').parent().slideUp()
-      }
+      reloadTodo();
     })
     // save, clear 按鍵功能
     $('.bottom-option').click( e => {
@@ -173,23 +163,30 @@
         })
       }
       })
-    function loadTodo(input) {
-      let ischeck = ''
-      if (input.check) ischeck = 'checked'
-      $('.list-group').append(`
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." ${escapeHtml(ischeck)}>
-          <span class="list-group-text">${escapeHtml(input.text)}</span>
-          <i class="fa fa-pencil-square-o fa-lg edit" aria-hidden="true"></i>
-          <i class="fa fa-trash-o fa-lg delete" aria-hidden="true"></i>
-        </li>
-      `)
+    function reloadTodo() {
+      const all = $("#btnradio1")
+      const active = $("#btnradio2")
+      const completed = $("#btnradio3")
+      const status = $('.options').find('input:checked')
+      if (status.is(all)) {
+        $('.list-group input').parent().show()
+      } else if (status.is(active)) {
+        $('.list-group input').parent().show()
+        $('.list-group input:checked').parent().hide()
+      } else if (status.is(completed)) {
+        $('.list-group input').parent().show()
+        $('.list-group input:not(:checked)').parent().hide()
+      }
     }
-    function addTodo(input) {
+    function loadTodo(input,isCheck) {
+      let check = ''
+      let line = ''
+      if (isCheck) check = 'checked'
+      if (check === 'checked') line = 'line-through'
       $('.list-group').append(`
         <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          <span class="list-group-text">${escapeHtml(input)}</span>
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." ${escapeHtml(check)}>
+          <span class="list-group-text ${escapeHtml(line)}">${escapeHtml(input)}</span>
           <i class="fa fa-pencil-square-o fa-lg edit" aria-hidden="true"></i>
           <i class="fa fa-trash-o fa-lg delete" aria-hidden="true"></i>
         </li>
