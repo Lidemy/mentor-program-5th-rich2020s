@@ -15,7 +15,7 @@
     exit();
   }
   $id = $_GET['id'];
-  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? and is_deleted IS NULL");
+  $sql = sprintf("SELECT * FROM rich_blog_artcle WHERE id = ? AND is_deleted = 0");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("i", $id);
   $result = $stmt->execute();
@@ -60,7 +60,7 @@
     <div class="post">
       <div class="post__container">
         <div>
-          <h3 class="post__title"><?php echo escape($row['title']) ?></h3>
+          <h3 class="post__title"><?php echo $row['title'] ?></h3>
           <?php if ($username === $row['username']) { ?>
             <div>
              <a href="update_post.php?id=<?php echo escape($row['id']) ?>"><button class="post__editbtn">編輯</button></a>

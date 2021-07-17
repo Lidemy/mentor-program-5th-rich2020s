@@ -18,12 +18,12 @@
   $item_per_page = 10;
   $offset = ($page - 1) * $item_per_page;
   $stmt = $conn->prepare(
-    'SELECT C.id as id, C.content as content, ' .
-    'C.created_at as created_at, M.nickname as nickname, ' . 
-    'M.username as username FROM rich_comments as C ' . 
-    'LEFT JOIN rich_member as M on C.username = M.username ' . 
-    'WHERE C.is_deleted IS NULL order by created_at DESC ' .
-    'limit ? offset ?'
+    'SELECT C.id AS id, C.content AS content, ' .
+    'C.created_at AS created_at, M.nickname AS nickname, ' . 
+    'M.username AS username FROM rich_comments AS C ' . 
+    'LEFT JOIN rich_member AS M ON C.username = M.username ' . 
+    'WHERE C.is_deleted = 0 ORDER BY created_at DESC ' .
+    'LIMIT ? OFFSET ?'
   );
   $stmt->bind_param('ii', $item_per_page, $offset);
   $result = $stmt->execute();

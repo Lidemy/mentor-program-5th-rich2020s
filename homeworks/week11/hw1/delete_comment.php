@@ -13,7 +13,7 @@
   }
   $id = $_GET['id'];
   if ($user['Authority'] === 2) {
-    $sql = sprintf("UPDATE rich_comments set is_deleted = 1 WHERE id =?");
+    $sql = sprintf("UPDATE rich_comments set is_deleted = 1 WHERE id = ?");
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
   } else {

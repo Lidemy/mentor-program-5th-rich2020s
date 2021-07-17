@@ -17,7 +17,7 @@
     die('資料有缺，請再試一次');
   }
 
-  $sql = sprintf("INSERT INTO rich_blog_artcle(title, username, content) values(?,?,?)");
+  $sql = sprintf("INSERT INTO rich_blog_artcle(title, username, content) VALUES(?,?,?)");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("sss", $_POST['title'], $username, $_POST['content']);
   $result = $stmt->execute();
