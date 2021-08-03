@@ -1,0 +1,61 @@
+$background-color:#00539CFF;
+$text-color: #fff;
+/*ADEFD1FF*/
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+body {
+  min-height: 100vh;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .card {
+    margin-top: 20px;
+    width: 530px;
+    height: 100%;
+    border: 1px solid black;
+    & input {
+      width: 400px;
+    }
+    & .title {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 75px;
+      margin-bottom: 60px;
+    }
+    
+    & .login__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & .desc {
+        text-align: left;
+        width: 400px;
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+      & .input {
+        margin-bottom: 26px;
+        height: 30px;
+        box-sizing: border-box;
+      }
+      & .submit__btn {
+        color: white;
+        background: black;
+        height: 50px;
+        border: 1px solid black;
+        cursor: pointer;
+        margin: 40px 0 80px 0;
+      }
+    }
+  }
+
+}
