@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav_container">
+      <div class="nav_visitor">
+        <h1 class="nav_title">Richbox's Blog</h1>
+        <div class="nav_links">
+          <a class="nav_link" href="#">文章列表</a>
+          <a class="nav_link" href="#">分類專區</a>
+          <a class="nav_link" href="#">關於我</a>
+        </div>
+      </div>
+      <div class="nav_admin">
+        <% if (!user) { %>
+        <a href="/login">登入</a>
+        <% } else {%>
+        <div class="display_user">hello <%= user %>!</div>
+        <a href="/logout">登出</a>
+        <a href="/post">新增貼文</a>
+        <% }%>
+      </div>
+    </div>
+  </nav>
+  <div><%= messages %></div>
+  <main>
+    <% for(let r of results) {%>
+      <div class="card mb-3">
+        <h5 class="card-header"><%= r.title %></h5>
+        <div class="card-body">
+          <div class="card-title"><%= r.userId.username  %></div>
+          <p class="card-text"><%=r.content%></p>
+        </div>
+      </div>
+    <% } %>
+  </main>
+  <footer class="footer">
+    Copyright © 2020 Richbox's Blog All Rights Reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
