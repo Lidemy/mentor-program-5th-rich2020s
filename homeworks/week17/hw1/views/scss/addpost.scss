@@ -1,9 +1,11 @@
 $background-color: #fff;
 $text-color: #F95700FF;
+$border-color: #F95700FF;
 $card-background-color: #F95700FF;
 $card-text-color: #fff;
 $footer-background: #F95700FF;
 $footer-text: #fff;
+$input-focus-bg: black;
 * {
   margin: 0;
   padding: 0;
@@ -51,66 +53,47 @@ body {
     }
   }
 }
+
 main {
   min-height: calc(100vh - 94px);
   max-width: 1600px;
-  margin: 0 auto;
+  border-color: $border-color;
   & .messages {
     max-width: 800px;
     margin: 0 auto;
     color: $text-color;
   }
-  & .card {
+  & .newpost_form {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 20px;
-    box-sizing: border-box;
-    & .card-header {
-      color: #fff;
-      background-color: $card-background-color;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      & h5 {
-        margin-bottom: 0;
+    & .mb-3 {
+      & .form-label {
+        color: $text-color;
       }
-      & div {
-        background-color: trasparent;
-        & button {
-          background-color: $card-background-color;
-          border: none;
-          & a {
-            color: $card-text-color;
-            &:hover {
-              color: #0d6efd;
-            }
-          }
+      & .form-control {
+        &:focus {
+          box-shadow: none;
         }
+        border-color: $border-color;
+        color: $text-color;
       }
     }
-    & .card-title {
-      color: $card-background-color;
-      background-color: #fff;
-    }
-    & .card-text {
-      color: $card-background-color;
-      background-color: #fff;
-      white-space: pre-line;
-    }
-    & .readmore {
-      background-color: $card-background-color;
-      & a {
-        color: #fff;
+    & .btn_container { 
+      display: flex;
+      justify-content: center;
+      & .form_btn {
+        background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        color: $text-color;
+        width: 80px;
+        height: 40px;
+        margin: 0 auto;
       }
     }
   }
-  & .article_info {
-    & h2 {
-      margin: 0;
-    }
-  }
-} 
+}
+
 footer {
   background: $text-color;
   color: $background-color;

@@ -12,11 +12,10 @@ const userController = {
       }
     }).then((user) => {
       if (!user) {
-        req.flash('messages', '不正確的使用者名稱')
+        req.flash('messages', '不正確的使用者名稱或密碼')
         res.redirect('/login')
         return
       }
-      // console.log(username, user.id)
       req.session.user = username
       req.session.userId = user.id
       req.flash('messages', '成功登入！')

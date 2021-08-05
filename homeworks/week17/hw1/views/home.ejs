@@ -11,9 +11,9 @@
   <nav class="nav">
     <div class="nav_container">
       <div class="nav_visitor">
-        <h1 class="nav_title">Richbox's Blog</h1>
+        <h1 class="nav_title"><a href="home">Richbox's Blog</a></h1>
         <div class="nav_links">
-          <a class="nav_link" href="#">文章列表</a>
+          <a class="nav_link" href="/allpost">文章列表</a>
           <a class="nav_link" href="#">分類專區</a>
           <a class="nav_link" href="#">關於我</a>
         </div>
@@ -29,14 +29,15 @@
       </div>
     </div>
   </nav>
-  <div><%= messages %></div>
   <main>
+    <div class="messages"><%= messages %></div>
     <% for(let r of results) {%>
       <div class="card mb-3">
         <h5 class="card-header"><%= r.title %></h5>
         <div class="card-body">
-          <div class="card-title"><%= r.userId.username  %></div>
+          <div class="card-title">@<%= r.userId.username  %></div>
           <p class="card-text"><%=r.content%></p>
+          <button type="button" class="btn btn-light readmore"><a href="/post/<%= r.id %>">Readmore</a></button>
         </div>
       </div>
     <% } %>
