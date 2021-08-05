@@ -3,80 +3,47 @@
 <head>
   <meta charset="utf-8">
   <title>home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
   <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
   <nav class="nav">
-    <div class="nav_visitor">
-      <h1 class="nav_title">Richbox's Blog</h1>
-      <div class="nav_links">
-        <a class="nav_link" href="#">文章列表</a>
-        <a class="nav_link" href="#">分類專區</a>
-        <a class="nav_link" href="#">關於我</a>
+    <div class="nav_container">
+      <div class="nav_visitor">
+        <h1 class="nav_title">Richbox's Blog</h1>
+        <div class="nav_links">
+          <a class="nav_link" href="#">文章列表</a>
+          <a class="nav_link" href="#">分類專區</a>
+          <a class="nav_link" href="#">關於我</a>
+        </div>
       </div>
-    </div>
-    <div class="nav_admin">
-      <a href="/login">登入</a>
+      <div class="nav_admin">
+        <% if (!user) { %>
+        <a href="/login">登入</a>
+        <% } else {%>
+        <div class="display_user">hello <%= user %>!</div>
+        <a href="/logout">登出</a>
+        <a href="/manage">管理後台</a>
+        <% }%>
+      </div>
     </div>
   </nav>
+  <div><%= messages %></div>
   <main>
-    <div class="article_card">
-      <div class="article_info">
-        <h2 class="article_title">文章名稱</h2>
-        <div>
-          <span>作者</span>
-          <span>時間</span>
+    <% for(let r of results) {%>
+      <div class="card mb-3">
+        <h5 class="card-header"><%= r.title %></h5>
+        <div class="card-body">
+          <div class="card-title"><%= r.userId.username  %></div>
+          <p class="card-text"><%=r.content%></p>
         </div>
       </div>
-      <div class="article_content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </div>
-     <div class="article_card">
-      <div class="article_info">
-        <h2 class="article_title">文章名稱</h2>
-        <div>
-          <span>作者</span>
-          <span>時間</span>
-        </div>
-      </div>
-      <div class="article_content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </div>
-     <div class="article_card">
-      <div class="article_info">
-        <h2 class="article_title">文章名稱</h2>
-        <div>
-          <span>作者</span>
-          <span>時間</span>
-        </div>
-      </div>
-      <div class="article_content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </div>
+    <% } %>
   </main>
   <footer class="footer">
     Copyright © 2020 Richbox's Blog All Rights Reserved.
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-

@@ -1,12 +1,15 @@
-/*ADEFD1FF*/
 * {
   margin: 0;
   padding: 0;
 }
 
+input {
+  border: none;
+}
+
 a {
   text-decoration: none;
-  color: #fff;
+  color: #F95700FF;
 }
 
 body {
@@ -22,12 +25,13 @@ main .card {
   margin-top: 20px;
   width: 530px;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid #F95700FF;
 }
 main .card input {
   width: 400px;
 }
 main .card .title {
+  color: #F95700FF;
   text-align: center;
   font-size: 32px;
   margin-top: 75px;
@@ -39,7 +43,11 @@ main .card .login__form {
   justify-content: center;
   align-items: center;
 }
+main .card .login__form .messages {
+  color: red;
+}
 main .card .login__form .desc {
+  color: #F95700FF;
   text-align: left;
   width: 400px;
   font-size: 14px;
@@ -48,13 +56,16 @@ main .card .login__form .desc {
 main .card .login__form .input {
   margin-bottom: 26px;
   height: 30px;
+  border: 1px solid #F95700FF;
   box-sizing: border-box;
+  border-color: #F95700FF;
 }
 main .card .login__form .submit__btn {
   color: white;
-  background: black;
+  background: #F95700FF;
   height: 50px;
-  border: 1px solid black;
+  border: 1px solid #F95700FF;
+  border-radius: 3px;
   cursor: pointer;
   margin: 40px 0 80px 0;
 }

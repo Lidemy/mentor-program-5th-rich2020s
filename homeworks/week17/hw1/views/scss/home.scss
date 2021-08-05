@@ -1,6 +1,9 @@
-$background-color:#00539CFF;
-$text-color: #fff;
-/*ADEFD1FF*/
+$background-color: #fff;
+$text-color: #F95700FF;
+$card-background-color: #F95700FF;
+$card-text-color: #fff;
+$footer-background: #F95700FF;
+$footer-text: #fff;
 * {
   margin: 0;
   padding: 0;
@@ -13,38 +16,62 @@ body {
   min-height: 100vh;
 }
 .nav {
-  display:flex;
-  justify-content:space-between;
   background: $background-color;
   color: $text-color;
-  align-items: center;
-  border-bottom: 1px solid gray;
-  & .nav_admin {
-    display: flex;
-    flex-direction: row;
-    & a {
-      margin-right: 20px;
-    }
-  }
-  & .nav_visitor {
-    & .nav_title {
-      margin-top: 0px;
-    }
-    & .nav_links {
-      margin-bottom: 10px;
+  border-bottom: 1px solid white;
+  & .nav_container {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    max-width: 1600px;
+    margin: 15px auto;
+    
+    & .nav_admin {
+      display: flex;
+      flex-direction: row;
       & a {
-        text-decoration: none;
-        color: $text-color;
+        margin-right: 20px;
+      }
+      & .display_user {
+        margin-right: 20px;
+      }
+    }
+    & .nav_visitor {
+      & .nav_title {
+        margin-top: 0px;
+      }
+      & .nav_links {
+        margin-bottom: 10px;
+        & a {
+          text-decoration: none;
+          color: $text-color;
+        }
       }
     }
   }
 }
 main {
-  min-height: calc(100vh - 119px);
-  & .article_card {
+  min-height: calc(100vh - 94px);
+  max-width: 1600px;
+  margin: 0 auto;
+  & .card {
     max-width: 800px;
-    margin: 20px 0 15px 30px;
-    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-sizing: border-box;
+    & .card-header {
+      color: #fff;
+      background-color: $card-background-color;
+    }
+    & .card-title {
+      color: $card-background-color;
+      background-color: #fff;
+    }
+    & .card-text {
+      color: $card-background-color;
+      background-color: #fff;
+    }
   }
   & .article_info {
     & h2 {
@@ -53,7 +80,7 @@ main {
   }
 } 
 footer {
-  background: $background-color;
-  color: $text-color;
+  background: $text-color;
+  color: $background-color;
   text-align: center;
 }
