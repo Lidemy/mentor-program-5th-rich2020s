@@ -26,17 +26,22 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/home', articleController.getAll)
+app.get('/home', articleController.get)
 app.get('/login', (req, res) => {
   res.render('login')
 })
-app.get('/post', (req, res) => {
-  res.render('post')
+app.get('/addpost', (req, res) => {
+  res.render('addpost')
 })
 app.get('/logout', userController.logout)
 app.get('/manage', articleController.getMyarticle)
+app.get('/post/:id', articleController.getArtcileById)
+app.get('/allpost', articleController.getAll)
+app.get('/update/:id', articleController.update)
+app.get('/delete/:id', articleController.delete)
 app.post('/login', userController.login)
-app.post('/post', articleController.add)
+app.post('/addpost', articleController.add)
+app.post('/update/:id', articleController.handleUpdate)
 app.listen(port, () => {
   console.log(`Examlpe start! port:${port}`)
 })

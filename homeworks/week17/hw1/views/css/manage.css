@@ -64,7 +64,26 @@ main .card {
 main .card .card-header {
   color: #fff;
   background-color: #F95700FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
+}
+main .card .card-header h5 {
+  margin-bottom: 0;
+}
+main .card .card-header div {
+  background-color: trasparent;
+}
+main .card .card-header div button {
+  background-color: #F95700FF;
+  border: none;
+}
+main .card .card-header div button a {
+  color: #fff;
+}
+main .card .card-header div button a:hover {
+  color: #0d6efd;
 }
 main .card .card-title {
   color: #F95700FF;
@@ -99,4 +118,4 @@ footer {
   text-align: center;
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=manage.css.map */

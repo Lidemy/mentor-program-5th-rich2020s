@@ -49,34 +49,60 @@ body {
 main {
   min-height: calc(100vh - 94px);
   max-width: 1600px;
-  border-color: #F95700FF;
+  margin: 0 auto;
 }
-main .newpost_form {
+main .messages {
   max-width: 800px;
   margin: 0 auto;
-}
-main .newpost_form .mb-3 .form-label {
   color: #F95700FF;
 }
-main .newpost_form .mb-3 .form-control {
-  border-color: #F95700FF;
-  color: #F95700FF;
-}
-main .newpost_form .mb-3 .form-control:focus {
-  box-shadow: none;
-}
-main .newpost_form .btn_container {
-  display: flex;
-  justify-content: center;
-}
-main .newpost_form .btn_container .form_btn {
-  background-color: white;
-  border: 1px solid #F95700FF;
-  border-radius: 3px;
-  color: #F95700FF;
-  width: 80px;
-  height: 40px;
+main .card {
+  max-width: 800px;
   margin: 0 auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+main .card .card-header {
+  color: #fff;
+  background-color: #F95700FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+main .card .card-header h5 {
+  margin-bottom: 0;
+}
+main .card .card-header div {
+  background-color: trasparent;
+}
+main .card .card-header div button {
+  background-color: #F95700FF;
+  border: none;
+}
+main .card .card-header div button a {
+  color: #fff;
+}
+main .card .card-header div button a:hover {
+  color: #0d6efd;
+}
+main .card .card-title {
+  color: #F95700FF;
+  background-color: #fff;
+}
+main .card .card-text {
+  color: #F95700FF;
+  background-color: #fff;
+  white-space: pre-line;
+}
+main .card .readmore {
+  background-color: #F95700FF;
+}
+main .card .readmore a {
+  color: #fff;
+}
+main .article_info h2 {
+  margin: 0;
 }
 
 footer {

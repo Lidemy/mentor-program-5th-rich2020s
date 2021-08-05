@@ -5,7 +5,7 @@
   <title>home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
-  <link rel="stylesheet" href="/css/post.css">
+  <link rel="stylesheet" href="/css/addpost.css">
 </head>
 <body>
   <nav class="nav">
@@ -13,7 +13,7 @@
       <div class="nav_visitor">
         <h1 class="nav_title"><a href="/home">Richbox's Blog</a></h1>
         <div class="nav_links">
-          <a class="nav_link" href="/allpost">文章列表</a>
+          <a class="nav_link" href="allpost">文章列表</a>
           <a class="nav_link" href="#">分類專區</a>
           <a class="nav_link" href="#">關於我</a>
         </div>
@@ -23,7 +23,6 @@
         <a href="/login">登入</a>
         <% } else {%>
         <div class="display_user">hello <%= user %>!</div>
-        <a href="/logout">登出</a>
         <a href="/manage">管理後台</a>
         <% }%>
       </div>
@@ -31,21 +30,19 @@
   </nav>
   <main>
     <div class="messages"><%= messages %></div>
-      <div class="card mb-3">
-        <div class="card-header">
-          <h5><%= results.title %></h5>
-          <div>
-            <% if(user === results.userId.username) { %>
-            <button><a href="/update/<%= results.id %>">編輯</a></button>
-            <button><a href="/delete/<%= results.id %>">刪除</a></button>
-            <% }%>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-title">@<%= results.userId.username  %></div>
-          <p class="card-text"><%=results.content%></p>
-        </div>
+    <form class="newpost_form" action="/update/<%= results.id %>" method="POST">
+      <div class="mb-3">
+        <label class="form-label">文章標題</label>
+        <input type="text" class="form-control" placeholder="標題" name="title" value=<%= results.title %>>
       </div>
+      <div class="mb-3">
+        <label class="form-label">文章內容</label>
+        <textarea class="form-control" rows="3" name="content"><%= results.content %></textarea>
+      </div>
+      <div class="btn_container">
+        <input type="submit" name="submit" class="form_btn">
+      </div>
+    </form>
   </main>
   <footer class="footer">
     Copyright © 2020 Richbox's Blog All Rights Reserved.

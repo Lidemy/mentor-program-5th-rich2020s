@@ -43,54 +43,45 @@ body {
 }
 .nav .nav_container .nav_visitor .nav_links a {
   text-decoration: none;
+  color: #F95700FF;
 }
 
 main {
   min-height: calc(100vh - 94px);
   max-width: 1600px;
-  margin: 0 auto;
+  border-color: #F95700FF;
 }
 main .messages {
   max-width: 800px;
   margin: 0 auto;
   color: #F95700FF;
 }
-main .card {
+main .newpost_form {
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 20px;
-  box-sizing: border-box;
 }
-main .card .card-header {
-  color: #fff;
-  background-color: #F95700FF;
-  padding: 20px;
-}
-main .card .card-title {
+main .newpost_form .mb-3 .form-label {
   color: #F95700FF;
-  background-color: #fff;
 }
-main .card .card-text {
+main .newpost_form .mb-3 .form-control {
+  border-color: #F95700FF;
   color: #F95700FF;
-  background-color: #fff;
-  white-space: pre-line;
 }
-main .card .readmore {
-  background-color: #F95700FF;
-  padding: 0;
+main .newpost_form .mb-3 .form-control:focus {
+  box-shadow: none;
 }
-main .card .readmore a {
-  padding: 7.5px 15px;
-  color: #fff;
-  display: block;
-  width: 100%;
-  height: 100%;
+main .newpost_form .btn_container {
+  display: flex;
+  justify-content: center;
 }
-main .card .readmore a:hover {
-  color: #0d6efd;
-}
-main .article_info h2 {
-  margin: 0;
+main .newpost_form .btn_container .form_btn {
+  background-color: white;
+  border: 1px solid #F95700FF;
+  border-radius: 3px;
+  color: #F95700FF;
+  width: 80px;
+  height: 40px;
+  margin: 0 auto;
 }
 
 footer {
@@ -99,4 +90,4 @@ footer {
   text-align: center;
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=addpost.css.map */
