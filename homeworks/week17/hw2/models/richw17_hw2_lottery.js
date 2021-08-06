@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true, 
       }
     },
-    isDelete: {
+    isActive: {
       type: DataTypes.BOOLEAN,
       defaultValue: 0
-    }
+    },
     userId: DataTypes.INTEGER,
     pictureUrl: DataTypes.STRING
   }, {

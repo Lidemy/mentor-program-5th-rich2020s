@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
+const userController = require('./controller/user.js')
+const lotteryController = require('./controller/lottery.js')
 
 const app = express()
 const port = 5001
@@ -22,11 +24,30 @@ app.use((req, res, next) => {
   res.locals.messages = req.flash('messages')
   next()
 })
+function isLogin(req, res, next) {
+  if (!req.session.user) {
+    req.flash('/messages', '請先登入')
+    res.redirect('/login')
+    return
+  }
+  next()
+}
 
 app.get('/lottery', (req, res) => {
-  res.render('index')
+  res.render('lottery')
 })
-
+app.get('/manage', isLogin,(req, res) => {
+  res.render('manage')
+})
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+app.get('/add-new-lottery', isLogin, (req, res) => {
+  res.render('add-new-lottery')
+})
+app.get('/drawing', lotteryController.draw)
+app.post('/add-new-lottery', isLogin, lotteryController.add)
+app.post('/login', userController.login)
 app.listen(port, () => {
   console.log(`Examlpe start! port:${port}`)
 })
