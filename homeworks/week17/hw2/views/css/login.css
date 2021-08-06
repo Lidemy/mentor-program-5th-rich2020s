@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .card {
+  margin-top: 20px;
+  width: 530px;
+  height: 100%;
+  border: 1px solid #000;
+}
+main .card input {
+  width: 400px;
+}
+main .card .title {
+  color: #000;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 75px;
+  margin-bottom: 60px;
+}
+main .card .login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .card .login__form .messages {
+  color: red;
+}
+main .card .login__form .desc {
+  color: #000;
+  text-align: left;
+  width: 400px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+main .card .login__form .input {
+  margin-bottom: 26px;
+  height: 30px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-color: #000;
+}
+main .card .login__form .submit__btn {
+  color: white;
+  background: #000;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 40px 0 80px 0;
+}
+
+/*# sourceMappingURL=login.css.map */

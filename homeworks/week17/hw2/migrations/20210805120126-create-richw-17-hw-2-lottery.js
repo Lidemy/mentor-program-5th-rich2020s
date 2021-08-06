@@ -9,18 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       prizeName: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       desc: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       probability: {
+        allowNull: false,
         type: Sequelize.FLOAT
       },
-      isDelete: {
+      isActive: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       pictureUrl: {
