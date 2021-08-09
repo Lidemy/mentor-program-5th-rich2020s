@@ -2,12 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
-// const path = require('path')
 const articleController = require('./controller/article')
 const userController = require('./controller/user')
 
 const app = express()
-const port = 5001
+const port = process.env.PORT || 5001
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

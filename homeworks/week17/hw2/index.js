@@ -6,7 +6,7 @@ const userController = require('./controller/user.js')
 const lotteryController = require('./controller/lottery.js')
 
 const app = express()
-const port = 5001
+const port = process.env.PORT || 5001
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

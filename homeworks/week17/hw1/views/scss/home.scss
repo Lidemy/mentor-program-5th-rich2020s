@@ -74,6 +74,11 @@ main {
       background-color: #fff;
     }
     & .card-text {
+      display: -webkit-box;
+      // text-overflow:ellipsis;
+      overflow:hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient:vertical;
       color: $card-background-color;
       background-color: #fff;
       white-space: pre-line;

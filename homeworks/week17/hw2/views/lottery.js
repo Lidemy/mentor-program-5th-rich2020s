@@ -12,7 +12,7 @@ draw.addEventListener('click', (e) => {
 async function fetchDraw(e) {
   let data, json
   try {
-    data = await fetch('http://localhost:5001/drawing')
+    data = await fetch('https://arcane-taiga-18124.herokuapp.com/drawing')
   } catch (err) {
     console.log(err)
   }
