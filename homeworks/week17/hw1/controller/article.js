@@ -11,7 +11,6 @@ const articleController = {
       content,
       richUserId: req.session.userId
     }).then((results) => {
-      console.log(results)
       res.redirect('/home')
     }).catch((err) => {
       req.flash('messages', '發生錯誤')
@@ -40,18 +39,15 @@ const articleController = {
   },
   getAll: (req, res) => {
     Article.findAll({
+      attributes: ['title'],
       where: {
         isDelete: false
       },
       order: [
         ['id', 'DESC']
-      ],
-      include: [{
-        model: User,
-        as: 'userId'
-      }]
+      ]
     }).then((results) => {
-      res.render('home', { results })
+      res.render('allpost', { results })
     }).catch((err) => {
       req.flash('messages', '發生錯誤')
       res.redirect('/login')
@@ -112,6 +108,7 @@ const articleController = {
         if (results == 0) {
           req.flash('messages', '操作失敗')
           res.redirect('home')
+          return
         }
         res.render('update', { results })
       }).catch((err) => {
@@ -151,6 +148,7 @@ const articleController = {
       if (results == 0) {
         req.flash('messages', '操作失敗')
         res.redirect('/manage')
+        return
       }
       req.flash('messages', '刪除成功！')
       res.redirect('/manage')

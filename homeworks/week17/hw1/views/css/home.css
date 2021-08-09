@@ -71,6 +71,10 @@ main .card .card-title {
   background-color: #fff;
 }
 main .card .card-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   color: #F95700FF;
   background-color: #fff;
   white-space: pre-line;

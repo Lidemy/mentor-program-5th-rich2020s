@@ -96,6 +96,11 @@ main {
       color: $card-background-color;
       background-color: #fff;
       white-space: pre-line;
+      display: -webkit-box;
+      // text-overflow:ellipsis;
+      overflow:hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient:vertical;
     }
     & .readmore {
       background-color: $card-background-color;

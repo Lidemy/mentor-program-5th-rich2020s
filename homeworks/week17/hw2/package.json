@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node hw2/index.js",
+    "db11": "npx sequelize-cli db:migrate",
+    "start": "npm run db11 && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
