@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .lottery_navbar {
   width: 100%;
   background-color: white;
@@ -59,6 +64,21 @@
 
 main {
   min-height: calc(100vh - 132px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+main .container_add_new {
+  width: 100%;
+  display: block;
+  max-width: 1200px;
+}
+main .container_add_new button {
+  margin: 30px 0 0 50px;
+}
+main .table {
+  max-width: 1200px;
+  margin-top: 30px;
 }
 
 .footer__bottom {

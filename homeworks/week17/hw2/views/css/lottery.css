@@ -53,34 +53,50 @@
   color: white;
 }
 
+.hide {
+  display: none;
+}
+
 .background {
-  background: url(games-bn.jpg) center/cover no-repeat;
+  background: url() center/cover no-repeat;
   background-size: auto 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 116px - 84px - 48px);
 }
 .background .prize {
-  display: none;
   box-sizing: border-box;
-  min-height: 768px;
 }
 .background .prize .prize__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: white;
+  padding: 20px;
+}
+.background .prize .prize__container h2 {
+  color: black;
+}
+.background .prize .prize__container .returnButton {
+  width: 400px;
+  height: 55px;
+  background: #e62a45;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
 }
 
 .content {
   box-sizing: border-box;
+  border: 1px solid black;
   max-width: 500px;
-  max-height: 560px;
   border-radius: 16px;
   background-color: white;
   padding: 40px 21px 24px 18px;
   margin-top: 55px;
-  margin-bottom: 150px;
 }
 .content__title {
   text-align: center;
@@ -104,6 +120,7 @@
   max-width: 320px;
   white-space: pre-line;
   line-height: 1.63;
+  font-family: MicrosoftJhengHei;
 }
 .content__info h2, .content__info p {
   font-family: MicrosoftJhengHei;
@@ -113,7 +130,7 @@
 .content .button {
   display: flex;
   justify-content: center;
-  padding-top: 36px;
+  margin-top: 36px;
 }
 .content .button button, .content .button .returnButton {
   width: 400px;

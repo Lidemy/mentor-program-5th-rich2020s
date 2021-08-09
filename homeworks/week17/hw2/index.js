@@ -33,12 +33,8 @@ function isLogin(req, res, next) {
   next()
 }
 
-app.get('/lottery', (req, res) => {
-  res.render('lottery')
-})
-app.get('/manage', isLogin,(req, res) => {
-  res.render('manage')
-})
+app.get('/lottery', lotteryController.getAll)
+app.get('/manage', isLogin, lotteryController.getAll)
 app.get('/login', (req, res) => {
   res.render('login')
 })
@@ -46,8 +42,12 @@ app.get('/add-new-lottery', isLogin, (req, res) => {
   res.render('add-new-lottery')
 })
 app.get('/drawing', lotteryController.draw)
+app.get('/delete-lottery/:id', isLogin, lotteryController.delete)
+app.get('/update-lottery/:id', isLogin, lotteryController.edit)
+app.post('/update-lottery/:id', isLogin, lotteryController.update)
 app.post('/add-new-lottery', isLogin, lotteryController.add)
 app.post('/login', userController.login)
+
 app.listen(port, () => {
   console.log(`Examlpe start! port:${port}`)
 })

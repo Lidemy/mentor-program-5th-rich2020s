@@ -26,10 +26,10 @@
   </div>
   </nav>
   <div class="background">
-    <div class="prize">
+    <div class="prize hide">
       <div class="prize__container">
         <h2></h2>
-        <button class="returnButton">繼續抽獎</button>
+        <button class="returnButton">再抽！</button>
       </div>
     </div>
     <main class="content">
@@ -44,12 +44,12 @@
       </div>
       <div class="content__info">
         <h2>獎品：</h2>
-        <p>❤ 頭獎一名：日本東京來回雙人遊(市價14990元)
-           ❤ 貳獎三名：90 吋電視一台(市價5990元)
-           ❤ 參獎十名：知名 YouTuber 簽名握手會入場券一張(市價1500元)</p> 
+        <p><% for(let r of results) {%>
+          <%=r.prizeName%>: <%=r.desc%><% }%>
+        </p>
       </div>
       <div class="button">
-        <button>我要抽獎</button>
+        <button class="draw_button">我要抽獎</button>
       </div>
     </main>
   </div>
@@ -82,5 +82,6 @@
         Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
       </p>
   </footer>
+  <script type="text/javascript" src="lottery.js"></script>
   </body>
 </html>

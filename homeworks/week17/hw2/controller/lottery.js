@@ -18,12 +18,28 @@ const lotteryController = {
         res.redirect('/manage')
       })
   },
-  draw: async function draw(req, res) {
+  edit: async(req, res) => {
+    let results
+    const { id } = req.params
+    try {
+      results = await Lottery.findOne({
+        where: {
+          id
+        }
+      })
+    } catch (err) {
+      res.send(JSON.stringify(err))
+      return
+    }
+    console.log(results)
+    res.render('edit', { results })
+  },
+  draw: async(req, res) => {
     let results
     try {
       results = await Lottery.findAll({ where: { isActive: 0 } })
     } catch (err) {
-      res.send(err)
+      res.send(JSON.stringify(err))
       return
     }
     /* eslint-disable */
@@ -35,10 +51,9 @@ const lotteryController = {
     let sum = 0
     let randomNum = Math.floor(Math.random() * 99) + 1;
     let arr = []
-    console.log(randomNum)
     for (let i = 0; i < results.length; i++) {
       sum += results[i].probability
-      if (sum >= randomNum) {
+      if (sum >= randomNum && arr.length === 0) {
         arr.push(results[i])
       }
     }
@@ -46,8 +61,64 @@ const lotteryController = {
       res.send('機率設定錯誤，請洽管理員')
       return
     }
-    console.log(arr)
     res.send(JSON.stringify(arr))
+    return
+  },
+  getAll: async function (req, res){
+    let results 
+    try {
+    results = await Lottery.findAll()
+    } catch (err) {
+      res.send('資料庫錯誤')
+      return
+    }
+    let str = req.path.substring(1)
+    res.render(str, { results })
+  },
+  update: async function(req, res) {
+    const id = req.params.id
+    const { prizeName, pictureUrl, desc, probability } = req.body
+    let results
+    try {
+      results = await Lottery.update({
+        prizeName,
+        pictureUrl,
+        desc,
+        probability,
+        userId: req.session.userId
+      },
+      {
+        where: {
+          id
+        }
+      })
+    } catch(err) {
+      req.flash('messages', err.toString())
+      res.redirect('/manage')
+      return
+    }
+    console.log(results)
+    req.flash('messages', '更新成功')
+    res.redirect('../manage')
+    return
+  },
+  delete: async function(req, res) {
+    const id = req.params.id
+    let results
+    try {
+      results = await Lottery.destroy({ 
+        where: {
+          id
+        }
+      })
+    } catch(err) {
+      req.flash('messages', err.toString())
+      res.redirect('/manage')
+      return
+    }
+    console.log(results)
+    req.flash('messages', '刪除成功！')
+    res.redirect('/manage')
     return
   }
 }
