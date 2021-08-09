@@ -31,7 +31,6 @@ const lotteryController = {
       res.send(JSON.stringify(err))
       return
     }
-    console.log(results)
     res.render('edit', { results })
   },
   draw: async(req, res) => {
@@ -97,7 +96,6 @@ const lotteryController = {
       res.redirect('/manage')
       return
     }
-    console.log(results)
     req.flash('messages', '更新成功')
     res.redirect('../manage')
     return
@@ -116,7 +114,6 @@ const lotteryController = {
       res.redirect('/manage')
       return
     }
-    console.log(results)
     req.flash('messages', '刪除成功！')
     res.redirect('/manage')
     return

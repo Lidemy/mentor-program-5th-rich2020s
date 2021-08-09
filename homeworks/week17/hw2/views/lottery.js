@@ -19,7 +19,6 @@ async function fetchDraw(e) {
   json = await data.json()
   if (json.length !== 0) {
     [json] = json
-    console.log(json.pictureUrl)
   }
 
   const image = document.querySelector('.background')
