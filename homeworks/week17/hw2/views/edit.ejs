@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>新增獎品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/add-new-lottery.css">
+
+  </head>
+
+  <body>
+    <nav class="lottery_navbar">
+    <div class="wrapper">
+      <div class="nav__title">
+        Just A Bite!
+      </div>
+      <ul class="navbar__list">
+        <li><a href="/lottery">抽個大獎</a></li>
+        <li><a href="#">我要點餐</a></li>
+        <li><a href="#">查詢訂單</a></li>
+        <li><a href="#">常見問題</a></li>
+        <li class="active"><a href="#">管理頁面</a></li>
+      </ul>
+    </div>
+    </nav>
+    <main>
+      <form class="container-md" action="/update-lottery/<%= results.id %>" method="POST">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">獎項名稱</span>
+          <input type="text" class="form-control" name="prizeName" value="<%= results.prizeName %>">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">得獎描述</span>
+          <input type="text" class="form-control" name="desc" value="<%= results.desc %>">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">得獎圖片網址</span>
+          <input type="text" class="form-control" name="pictureUrl" value="<%= results.pictureUrl %>">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">獎項機率</span>
+          <input type="number" class="form-control" name="probability" value="<%= results.probability %>">
+          <span class="input-group-text">%</span>
+        </div>
+          <button type="submit" class="btn btn-light">submit</button>
+      </form>
+    </main>
+    <footer class="footer__bottom">
+        <p>
+          Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
