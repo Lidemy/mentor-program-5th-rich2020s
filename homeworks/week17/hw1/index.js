@@ -11,7 +11,7 @@ const port = process.env.PORT || 5001
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.seesionSecret,
   resave: false,
   saveUninitialized: true
 }))
