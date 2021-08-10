@@ -39,7 +39,7 @@ const articleController = {
   },
   getAll: (req, res) => {
     Article.findAll({
-      attributes: ['title'],
+      attributes: ['title', 'id'],
       where: {
         isDelete: false
       },
@@ -47,6 +47,7 @@ const articleController = {
         ['id', 'DESC']
       ]
     }).then((results) => {
+      console.log(results)
       res.render('allpost', { results })
     }).catch((err) => {
       req.flash('messages', '發生錯誤')
