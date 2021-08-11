@@ -13,8 +13,9 @@ const lotteryController = {
     })
       .then((results) => {
         res.redirect('/manage')
-      }).catch((err) => {
-        req.flash('messages', err.toString())
+      })
+      .catch((err) => {
+        console.log(err.toString())
         res.redirect('/manage')
       })
   },
