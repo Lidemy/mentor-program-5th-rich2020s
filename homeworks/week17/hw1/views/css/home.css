@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #F95700FF;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.nav {
+  background: #fff;
+  color: #F95700FF;
+  border-bottom: 1px solid white;
+}
+.nav .nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  margin: 15px auto;
+}
+.nav .nav_container .nav_admin {
+  display: flex;
+  flex-direction: row;
+}
+.nav .nav_container .nav_admin a {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_admin .display_user {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_visitor .nav_title {
+  margin-top: 0px;
+}
+.nav .nav_container .nav_visitor .nav_links {
+  margin-bottom: 10px;
+}
+.nav .nav_container .nav_visitor .nav_links a {
+  text-decoration: none;
+}
+
+main {
+  min-height: calc(100vh - 94px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+main .messages {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #F95700FF;
+}
+main .card {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+main .card .card-header {
+  color: #fff;
+  background-color: #F95700FF;
+  padding: 20px;
+}
+main .card .card-title {
+  color: #F95700FF;
+  background-color: #fff;
+}
+main .card .card-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: #F95700FF;
+  background-color: #fff;
+  white-space: pre-line;
+}
+main .card .readmore {
+  background-color: #F95700FF;
+  padding: 0;
+}
+main .card .readmore a {
+  padding: 7.5px 15px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main .card .readmore a:hover {
+  color: #0d6efd;
+}
+main .article_info h2 {
+  margin: 0;
+}
+
+footer {
+  background: #F95700FF;
+  color: #fff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=home.css.map */

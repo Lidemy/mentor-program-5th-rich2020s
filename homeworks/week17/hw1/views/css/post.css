@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #F95700FF;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.nav {
+  background: #fff;
+  color: #F95700FF;
+  border-bottom: 1px solid white;
+}
+.nav .nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  margin: 15px auto;
+}
+.nav .nav_container .nav_admin {
+  display: flex;
+  flex-direction: row;
+}
+.nav .nav_container .nav_admin a {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_admin .display_user {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_visitor .nav_title {
+  margin-top: 0px;
+}
+.nav .nav_container .nav_visitor .nav_links {
+  margin-bottom: 10px;
+}
+.nav .nav_container .nav_visitor .nav_links a {
+  text-decoration: none;
+  color: #F95700FF;
+}
+
+main {
+  min-height: calc(100vh - 94px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+main .messages {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #F95700FF;
+}
+main .card {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+main .card .card-header {
+  color: #fff;
+  background-color: #F95700FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+main .card .card-header h5 {
+  margin-bottom: 0;
+}
+main .card .card-header div {
+  background-color: trasparent;
+}
+main .card .card-header div button {
+  background-color: #F95700FF;
+  border: none;
+}
+main .card .card-header div button a {
+  color: #fff;
+}
+main .card .card-header div button a:hover {
+  color: #0d6efd;
+}
+main .card .card-title {
+  color: #F95700FF;
+  background-color: #fff;
+}
+main .card .card-text {
+  color: #F95700FF;
+  background-color: #fff;
+  white-space: pre-line;
+}
+main .card .readmore {
+  background-color: #F95700FF;
+}
+main .card .readmore a {
+  color: #fff;
+}
+main .article_info h2 {
+  margin: 0;
+}
+
+footer {
+  background: #F95700FF;
+  color: #fff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=post.css.map */

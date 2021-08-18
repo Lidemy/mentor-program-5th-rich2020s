@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #F95700FF;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.nav {
+  background: #fff;
+  color: #F95700FF;
+  border-bottom: 1px solid white;
+}
+.nav .nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  margin: 15px auto;
+}
+.nav .nav_container .nav_admin {
+  display: flex;
+  flex-direction: row;
+}
+.nav .nav_container .nav_admin a {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_admin .display_user {
+  margin-right: 20px;
+}
+.nav .nav_container .nav_visitor .nav_title {
+  margin-top: 0px;
+}
+.nav .nav_container .nav_visitor .nav_links {
+  margin-bottom: 10px;
+}
+.nav .nav_container .nav_visitor .nav_links a {
+  text-decoration: none;
+  color: #F95700FF;
+}
+
+main {
+  min-height: calc(100vh - 94px);
+  max-width: 1600px;
+  border-color: #F95700FF;
+}
+main .messages {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #F95700FF;
+}
+main .newpost_form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+main .newpost_form .mb-3 .form-label {
+  color: #F95700FF;
+}
+main .newpost_form .mb-3 .form-control {
+  border-color: #F95700FF;
+  color: #F95700FF;
+}
+main .newpost_form .mb-3 .form-control:focus {
+  box-shadow: none;
+}
+main .newpost_form .btn_container {
+  display: flex;
+  justify-content: center;
+}
+main .newpost_form .btn_container .form_btn {
+  background-color: white;
+  border: 1px solid #F95700FF;
+  border-radius: 3px;
+  color: #F95700FF;
+  width: 80px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+footer {
+  background: #F95700FF;
+  color: #fff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=addpost.css.map */

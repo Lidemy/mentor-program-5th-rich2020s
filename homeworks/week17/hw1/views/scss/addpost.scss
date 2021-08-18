@@ -1,0 +1,101 @@
+$background-color: #fff;
+$text-color: #F95700FF;
+$border-color: #F95700FF;
+$card-background-color: #F95700FF;
+$card-text-color: #fff;
+$footer-background: #F95700FF;
+$footer-text: #fff;
+$input-focus-bg: black;
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+body {
+  min-height: 100vh;
+}
+.nav {
+  background: $background-color;
+  color: $text-color;
+  border-bottom: 1px solid white;
+  & .nav_container {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    max-width: 1600px;
+    margin: 15px auto;
+    
+    & .nav_admin {
+      display: flex;
+      flex-direction: row;
+      & a {
+        margin-right: 20px;
+      }
+      & .display_user {
+        margin-right: 20px;
+      }
+    }
+    & .nav_visitor {
+      & .nav_title {
+        margin-top: 0px;
+      }
+      & .nav_links {
+        margin-bottom: 10px;
+        & a {
+          text-decoration: none;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - 94px);
+  max-width: 1600px;
+  border-color: $border-color;
+  & .messages {
+    max-width: 800px;
+    margin: 0 auto;
+    color: $text-color;
+  }
+  & .newpost_form {
+    max-width: 800px;
+    margin: 0 auto;
+    & .mb-3 {
+      & .form-label {
+        color: $text-color;
+      }
+      & .form-control {
+        &:focus {
+          box-shadow: none;
+        }
+        border-color: $border-color;
+        color: $text-color;
+      }
+    }
+    & .btn_container { 
+      display: flex;
+      justify-content: center;
+      & .form_btn {
+        background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        color: $text-color;
+        width: 80px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+footer {
+  background: $text-color;
+  color: $background-color;
+  text-align: center;
+}

@@ -2,3 +2,7 @@ examples/
 week2/
 *.min.js
 *.config.js
+homeworks/week17/hw1/models/*
+homeworks/week17/hw2/models/*
+migrations/
+

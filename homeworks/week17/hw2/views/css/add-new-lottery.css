@@ -1,0 +1,79 @@
+.lottery_navbar {
+  width: 100%;
+  background-color: white;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: block;
+}
+.lottery_navbar .wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+  height: 84px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lottery_navbar .wrapper .nav__title {
+  font-size: 36px;
+  margin-left: 36px;
+  color: #489846;
+  font-family: Questrial;
+}
+.lottery_navbar .wrapper .navbar__list {
+  font-size: 18px;
+  color: #010101;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-right: 30px;
+  margin-bottom: 0;
+}
+.lottery_navbar .wrapper .navbar__list > .active a {
+  background: #ff7286;
+  color: white;
+}
+.lottery_navbar .wrapper .navbar__list > li {
+  margin: 6px;
+  padding: 0;
+}
+.lottery_navbar .wrapper .navbar__list > li > a {
+  text-decoration: none;
+  font-family: MicrosoftJhengHei;
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  width: 100px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.lottery_navbar .wrapper .navbar__list > li > a:hover {
+  background: #ff7286;
+  transition: 0.2s;
+  color: white;
+}
+
+main {
+  min-height: calc(100vh - 152px);
+  margin-top: 20px;
+}
+
+.footer__bottom {
+  background: #35564b;
+  text-align: center;
+  justify-content: center;
+}
+.footer__bottom p {
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  color: white;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=add-new-lottery.css.map */

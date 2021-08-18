@@ -1,0 +1,186 @@
+.navbar {
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    & .wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 10px;
+        height:84px;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .nav__title {
+            font-size: 36px;
+            margin-left: 36px; 
+            color: #489846;
+            font-family: Questrial;
+        }
+        & .navbar__list {
+            font-size: 18px;
+            color: #010101;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin-right: 30px;
+            & > .active a {
+                background: #ff7286;
+                color: white;
+            }
+            & > li {
+                margin: 6px;
+                padding: 0;
+                & > a {
+                    text-decoration: none;
+                    font-family: MicrosoftJhengHei;
+                    border-radius: 5px;
+                    color: black;
+                    display: flex;
+                    width: 100px;
+                    height: 40px;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        background: #ff7286;
+                        transition: 0.2s;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+.hide {
+    display: none;
+}
+.background {
+    background: url() center/cover no-repeat;
+    background-size: auto 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 116px - 84px - 48px);
+    & .prize {
+        box-sizing: border-box;
+        & .prize__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            & h2 {
+                color:black;
+            }
+            & .returnButton {
+                width: 400px;
+                height: 55px;
+                background: #e62a45;
+                border:1px solid white;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.content {
+    box-sizing: border-box;
+    border:1px solid black;
+    max-width: 500px;
+    border-radius: 16px;
+    background-color: white;
+    padding: 40px 21px 24px 18px;
+    margin-top: 55px;
+    &__title{
+        text-align: center;
+        font-family: MicrosoftJhengHei;
+        font-size: 24px;
+        color: #5ec1b6;
+        margin: 0;
+        margin-bottom: 22px;
+    }
+    &__info {
+        display: flex;
+        border-bottom: 1px dotted #cdcdcd;
+        padding-top: 14px;
+        padding-bottom: 17px;
+        & h2 {
+            font-size: 18px;
+        }
+        & p {
+            font-size: 16px;
+            max-width: 320px;
+            white-space: pre-line;  
+            line-height: 1.63;
+            font-family: MicrosoftJhengHei;
+        }
+        & h2, & p{
+            font-family: MicrosoftJhengHei;
+            color: #322929;
+            margin: 0;
+        }
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 36px;
+        & button, .returnButton {
+            width: 400px;
+            height: 55px;
+            background: #e62a45;
+            border:1px solid white;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+        & button:hover {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+    }
+}
+.footer__background {
+    background: #e8efee;
+    width: 100%;
+    & .footer__top {
+        display: flex;
+        max-width: 1280px;
+        justify-content: space-between;
+        padding: 12px;
+        margin: 0 auto;
+        & .footer__info {
+            font-family: MicrosoftJhengHei;
+            font-size: 14px;
+        }
+        & .footer__top__right {
+            text-align: right;
+            & .footer__mark {
+                font-family: Questrial;
+                font-size: 36px;
+                color: #489846;
+            }
+            & .footer__links a {
+                font-family: Questrial;
+                font-size: 14px;
+                text-decoration: none;
+                color: #484848;
+            }
+        }
+    }
+}
+.footer__bottom {
+    background: #35564b;
+    text-align: center;
+    justify-content: center;
+    & p {
+        font-family: MicrosoftJhengHei;
+        font-size: 16px;
+        color: white;
+        height: 48px;
+        line-height: 48px;
+        margin: 0 auto; 
+    }
+}
