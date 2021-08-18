@@ -105,12 +105,6 @@ const articleController = {
       }]
     })
       .then((results) => {
-        /* eslint-disable */
-        if (results == 0) {
-          req.flash('messages', '操作失敗')
-          res.redirect('home')
-          return
-        }
         res.render('update', { results })
       }).catch((err) => {
         req.flash('messages', '缺乏權限或必要資料')
@@ -146,11 +140,6 @@ const articleController = {
       }
     }).then((results) => {
       /* eslint-disable */
-      if (results == 0) {
-        req.flash('messages', '操作失敗')
-        res.redirect('/manage')
-        return
-      }
       req.flash('messages', '刪除成功！')
       res.redirect('/manage')
     }).catch((err) => {
