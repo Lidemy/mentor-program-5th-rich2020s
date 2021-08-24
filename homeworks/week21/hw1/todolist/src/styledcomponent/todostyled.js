@@ -98,6 +98,7 @@ export function Todos({
       <TodosContainer key={todo.id}>
         {editedId === todo.id ? (
           <TodoContent
+            id={"editedInput"}
             onChange={(e) => handleEditedOnChange(e)}
             as="input"
             value={editedValue}

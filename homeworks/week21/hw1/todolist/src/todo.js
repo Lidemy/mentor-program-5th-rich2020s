@@ -33,6 +33,7 @@ function TodoList() {
     },
   ]);
   function deleteAllTodos() {
+    if (editedId !== null) return;
     setTodos([]);
   }
   function handleEdited(id, content) {
