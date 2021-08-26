@@ -10,8 +10,11 @@ const Container = styled.div`
 const Block = styled.div`
   height: 45px;
   width: 45px;
-  background-color: #ccc;
-  border: 1px solid black;
+  background-color: ${(props) =>
+    props.indexX === 19 || props.indexY === 19 ? "transparent" : "#ccc"};
+  border: 1px solid
+    ${(props) =>
+      props.indexX === 19 || props.indexY === 19 ? "transparent" : "black"};
   position: relative;
 `;
 const Title = styled.h1``;
@@ -179,20 +182,8 @@ function App() {
         return (
           <div key={indexY} style={{ display: "flex" }}>
             {row.map((block, indexX) => {
-              if (indexX === 19 || indexY === 19) {
-                return (
-                  <HiddenBlock key={indexX}>
-                    <ClickBlock
-                      color={block}
-                      onClick={() => handleClick(indexX, indexY, block)}
-                      blackIsNext={blackIsNext}
-                      winner={winner}
-                    />
-                  </HiddenBlock>
-                );
-              }
               return (
-                <Block key={indexX}>
+                <Block key={indexX} indexX={indexX} indexY={indexY}>
                   <ClickBlock
                     color={block}
                     onClick={() => handleClick(indexX, indexY, block)}
