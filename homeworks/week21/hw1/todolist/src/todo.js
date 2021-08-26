@@ -2,6 +2,7 @@ import styled from "styled-components";
 import "./todo.css";
 import { useState, useRef } from "react";
 import { AddTodo, TodoFilter, Todos } from "./styledcomponent";
+import { useEffect } from "react/cjs/react.development";
 
 const Container = styled.div`
   display: flex;
@@ -42,6 +43,12 @@ function TodoList() {
       setEditedValue(content);
     }
   }
+  useEffect(() => {
+    console.log("effect!");
+    if (document.querySelector("#editedInput"))
+      document.querySelector("#editedInput").focus();
+  }, [editedId]);
+
   function handleEditedOnChange(e) {
     setEditedValue(e.target.value);
   }
