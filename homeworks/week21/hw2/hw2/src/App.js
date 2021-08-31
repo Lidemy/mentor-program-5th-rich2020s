@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 const Container = styled.div`
@@ -20,10 +20,6 @@ const Block = styled.div`
 const Title = styled.h1``;
 const StateInfo = styled.div`
   margin-bottom: 20px;
-`;
-const HiddenBlock = styled(Block)`
-  background-color: transparent;
-  border: 1px solid transparent;
 `;
 const ClickBlock = styled.div`
   position: absolute;
