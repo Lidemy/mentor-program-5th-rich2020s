@@ -1,19 +1,7 @@
-import styled from "styled-components";
 import "./todo.css";
 import { useState, useRef } from "react";
-import { AddTodo, TodoFilter, Todos } from "./styledcomponent";
+import { AddTodo, TodoFilter, Todos, Container, Title } from "./components";
 import { useEffect } from "react/cjs/react.development";
-
-const Container = styled.div`
-  display: flex;
-  max-width: 800px;
-  flex-direction: column;
-  margin: 30px auto;
-  justify-content: center;
-`;
-const Title = styled.h1`
-  text-align: center;
-`;
 
 function TodoList() {
   const id = useRef(3);
@@ -29,7 +17,7 @@ function TodoList() {
     },
     {
       id: 2,
-      content: "vu vu",
+      content: "按下編輯後，不按下完成就不能刪除或分類喔！",
       isDone: false,
     },
   ]);
@@ -44,7 +32,6 @@ function TodoList() {
     }
   }
   useEffect(() => {
-    console.log("effect!");
     if (document.querySelector("#editedInput"))
       document.querySelector("#editedInput").focus();
   }, [editedId]);
@@ -73,6 +60,7 @@ function TodoList() {
     setInputValue(e.target.value);
   }
   function handleAddTodo(inputValue) {
+    if (inputValue === "") return;
     setTodos([
       ...todos,
       {

@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  max-width: 800px;
+  flex-direction: column;
+  margin: 30px auto;
+  justify-content: center;
+`;
+export const Title = styled.h1`
+  text-align: center;
+`;
 const TodoInput = styled.input`
   width: 50%;
   height: 40px;
