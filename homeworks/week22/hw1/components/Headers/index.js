@@ -83,7 +83,7 @@ export default function Header() {
         <NavLinks>
           <Brand>Rich</Brand>
           <NavLink exact={true} to="/" label={'首頁'} />
-          <NavLink to="/all-post/1" label={'所有文章'} />
+          <NavLink to="/all-post/" label={'所有文章'} />
           <NavLink to="/about" label={'About'} />
         </NavLinks>
         <NavLinks>
