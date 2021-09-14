@@ -1,30 +1,25 @@
-import { useEffect, useState } from 'react'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './pages/HomePage'
-import About from './pages/about'
-import Login from './pages/login'
-import Register from './pages/register'
-import Header from './components/Headers'
-import Post from './pages/post'
-import { AuthContext } from './context'
-import SinglePost from './pages/single-post'
-import AllPost from './pages/all-post'
+import React, { useEffect, useState } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/HomePage";
+import About from "./pages/about";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Header from "./components/Headers";
+import Post from "./pages/post";
+import { AuthContext } from "./context";
+import SinglePost from "./pages/single-post";
+import AllPost from "./pages/all-post";
 
 export default function App() {
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
-    if (localStorage.getItem('user_token')) {
-      setIsLogin(true)
+    if (localStorage.getItem("user_token")) {
+      setIsLogin(true);
     }
-  }, [])
+  }, []);
   return (
     <Router>
-      <AuthContext.Provider
-        value={{
-          isLogin,
-          setIsLogin
-        }}
-      >
+      <AuthContext.Provider value={{ isLogin, setIsLogin }}>
         <div>
           <Header />
           <Switch>
@@ -53,5 +48,5 @@ export default function App() {
         </div>
       </AuthContext.Provider>
     </Router>
-  )
+  );
 }
